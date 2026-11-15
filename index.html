@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f5ef">
+<meta name="description" content="WonderBrain is a little universe of big ideas. Explore 13 connected subjects, follow rabbit holes, and play four curiosity games. No account required.">
+<title>WonderBrain · A little more curious</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c3535'/%3E%3Ctext x='32' y='46' text-anchor='middle' fill='%23e7eea2' font-family='Georgia' font-size='44'%3Ew%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;--bg:#f7f5ef;--paper:#fffef9;--ink:#1c3535;--muted:#526460;--line:#d6dcd2;--soft:#eaf0e6;--green:#d4e9c8;--yellow:#f1e19d;--purple:#e4dcf0;--blue:#d9e8ed;--accent:#2d6154;--shadow:0 16px 60px #1c353515;--radius:20px;font-size:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{color:inherit}button,a{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--accent);text-underline-offset:.22em}button:disabled{cursor:default;opacity:.6}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid #9c5500;outline-offset:4px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.15}h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.045em}h1{font-size:clamp(2.8rem,5.8vw,5.5rem)}h2{font-size:clamp(2rem,3.8vw,3.1rem)}h3{font-size:1.18rem;font-weight:650;letter-spacing:-.02em}p+p{margin-top:1em}svg{display:block;flex-shrink:0}button svg{pointer-events:none}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-weight:650;font-size:.7rem}.skip{position:fixed;top:-100px;left:20px;z-index:100;padding:10px 20px;background:var(--ink);color:var(--bg)}.skip:focus{top:10px}.wrap{width:min(1280px,100% - 80px);margin:auto}.masthead{border-bottom:1px solid var(--line);background:var(--bg)}.header-inner{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:1.4rem;letter-spacing:-.06em;font-weight:750}.brand-icon{background:var(--ink);color:var(--yellow);border-radius:13px;width:38px;height:38px;display:grid;place-items:center;font-family:Georgia,serif;font-style:italic;font-size:2rem;line-height:1;padding-bottom:5px}.brand small{font-size:.6rem;letter-spacing:.03em;align-self:flex-start;margin-top:7px;margin-left:3px;font-weight:500}.top-nav{display:flex;gap:6px;align-items:center}.nav-button{background:transparent;border:0;padding:12px 18px;border-radius:30px;color:var(--muted);font-size:.88rem;font-weight:550;white-space:nowrap}.nav-button[aria-current="page"]{background:var(--ink);color:var(--bg)}.header-right{display:flex;gap:16px;align-items:center}.local-note{font-size:.73rem;display:flex;gap:7px;align-items:center}.local-note:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}.icon-button{width:42px;height:42px;border:1px solid var(--line);background:var(--paper);border-radius:50%;display:grid;place-items:center;flex-shrink:0}.button{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:30px;padding:12px 21px;font-size:.88rem;font-weight:600;display:inline-flex;gap:10px;align-items:center;justify-content:center;text-decoration:none;min-height:46px;line-height:1.35}.button:hover{filter:brightness(1.13)}.button.secondary{background:transparent;color:var(--ink);border-color:var(--line)}.button.small{padding:8px 15px;min-height:38px;font-size:.78rem}.button:disabled{filter:none}.hero{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;gap:60px;padding:67px 0 65px}.hero .eyebrow{display:flex;gap:10px;align-items:center;margin-bottom:25px}.tiny-star{font-size:1.1rem;line-height:1}.hero-copy>p{color:var(--muted);max-width:440px;font-size:1rem;margin:25px 0 30px;line-height:1.8}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-foot{display:flex;gap:22px;font-size:.72rem;margin-top:30px;color:var(--muted)}.hero-foot span+span{position:relative}.hero-foot span+span:before{content:"·";position:absolute;left:-13px}.universe{position:relative;min-height:380px;display:grid;place-items:center;isolation:isolate}.universe:before{content:"";position:absolute;inset:3% 0;border-radius:50%;background:radial-gradient(ellipse at center,#dde7cdaa 0,transparent 68%);z-index:-2}.orbit{position:absolute;width:90%;height:54%;border:1px solid #899c8d80;border-radius:50%;transform:rotate(-28deg)}.orbit.second{width:68%;height:83%;transform:rotate(27deg);border-style:dashed;border-color:#a9b7a8}.orbit.third{width:93%;height:80%;border-color:#b8c1b24d;transform:rotate(40deg)}.core{width:176px;height:176px;background:var(--ink);border-radius:50%;color:#f1e8bc;display:grid;place-items:center;box-shadow:inset -20px -10px 30px #0002,10px 25px 45px #1c35351b;transform:rotate(-10deg)}.core svg{width:105px;height:105px}.orbit-label{position:absolute;border:1px solid var(--line);border-radius:30px;padding:9px 17px;background:var(--paper);font-size:.76rem;box-shadow:0 6px 16px #1c353509;display:flex;align-items:center;gap:8px}.orbit-label i{font-style:normal;font-size:1rem}.orbit-label.one{top:15px;left:18%}.orbit-label.two{top:99px;right:-10px;background:var(--yellow)}.orbit-label.three{bottom:73px;left:-5px;background:var(--purple)}.orbit-label.four{bottom:6px;right:9%;background:var(--green)}.star{position:absolute;font-size:1.5rem;top:44px;right:18%}.star.small{font-size:1rem;top:auto;bottom:48px;left:30%}.dot{width:10px;height:10px;background:#b7c58b;border-radius:50%;position:absolute;top:45%;left:12%}.dot.two{background:#cdbce0;left:auto;right:18%;top:77%;width:15px;height:15px}.discovery-band{border-block:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:21px 0;gap:25px}.discovery-band .band-text{display:flex;align-items:center;gap:18px}.band-symbol{font-size:1.6rem;color:var(--accent)}.band-text strong{display:block;font-size:.9rem;font-weight:600}.band-text p{font-size:.78rem;color:var(--muted);margin-top:2px}.progress-pill{border:1px solid var(--line);border-radius:40px;padding:8px 14px;font-size:.75rem;display:flex;align-items:center;gap:9px;white-space:nowrap}.progress-dot{width:7px;height:7px;background:var(--accent);border-radius:50%}.library{padding:52px 0 80px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.section-heading .eyebrow{margin-bottom:11px;color:var(--muted)}.search-wrap{position:relative;min-width:280px;width:330px}.search-wrap svg{position:absolute;left:17px;top:15px;color:var(--muted)}.search-wrap input{width:100%;border:1px solid var(--line);border-radius:30px;background:var(--paper);color:var(--ink);padding:12px 17px 12px 46px;font-size:.83rem;min-height:46px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid var(--line);background:transparent;border-radius:30px;min-height:36px;padding:7px 14px;font-size:.73rem;line-height:1.3}.filter:hover{background:var(--soft)}.filter[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.result-line{display:flex;align-items:center;justify-content:space-between;margin:20px 0;color:var(--muted);font-size:.73rem}.text-button{border:0;background:none;text-decoration:underline;text-underline-offset:.22em;padding:5px;color:var(--accent);font-size:inherit}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.discovery-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s}.discovery-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.card-art{height:130px;background:var(--card-color,var(--green));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#284c45}.art-grid{position:absolute;inset:0;background-image:linear-gradient(#284c4510 1px,transparent 1px),linear-gradient(90deg,#284c4510 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse,black,transparent 80%)}.card-art>svg{position:relative;width:94px;height:94px;opacity:.8}.card-tag{position:absolute;top:14px;left:17px;font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:#284c45}.save-button{position:absolute;right:13px;top:11px;width:34px;height:34px;border:1px solid #284c4540;border-radius:50%;display:grid;place-items:center;background:#fff9;color:#284c45}.save-button[aria-pressed=true]{background:#284c45;color:#fffef9}.card-content{padding:23px 24px 18px;display:flex;flex:1;flex-direction:column}.card-meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.67rem;margin-bottom:11px}.read-mark{color:var(--accent)}.card-content h3{line-height:1.35;margin-bottom:12px}.card-content h3 a{color:var(--ink);text-decoration:none}.card-content h3 a:after{content:" ↗";font-weight:400;font-size:.8rem;white-space:nowrap}.card-content>p{font-size:.8rem;line-height:1.75;color:var(--muted);margin-bottom:22px}.card-bottom{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:.68rem;display:flex;align-items:center;justify-content:space-between;color:var(--muted)}.card-bottom a{font-weight:600;color:var(--ink);text-decoration:none;padding:5px 0}.empty{grid-column:1/-1;padding:64px 24px;text-align:center;border:1px dashed var(--line);border-radius:20px}.empty h3{margin-bottom:12px}.empty p{margin-bottom:22px}.bottom-note{display:flex;justify-content:center;align-items:center;gap:16px;margin:42px auto 0;text-align:center;color:var(--muted);font-size:.75rem}.bottom-note:before,.bottom-note:after{content:"";height:1px;width:60px;background:var(--line)}.page-view{padding:55px 0 85px}.page-intro{margin-bottom:35px}.page-intro .eyebrow{color:var(--muted);margin-bottom:15px}.page-intro>p{margin-top:18px;color:var(--muted);max-width:640px}.collection-stats{display:flex;gap:25px;margin:22px 0;color:var(--muted);font-size:.85rem}.collection-stats strong{font-size:1.4rem;color:var(--ink);font-family:Georgia,serif;font-weight:400;margin-right:6px}.footer{border-top:1px solid var(--line);padding:25px 0 32px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.7rem;color:var(--muted)}.footer .brand{font-size:1.08rem}.footer p{max-width:540px;text-align:right}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
+dialog{padding:0;border:1px solid var(--line);border-radius:24px;background:var(--paper);color:var(--ink);width:min(830px,100% - 32px);max-height:88dvh;box-shadow:0 24px 100px #0003;overflow:auto}dialog::backdrop{background:#122d2bc0;backdrop-filter:blur(5px)}.dialog-bar{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:3;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 23px}.dialog-bar .eyebrow{font-size:.65rem}.dialog-body{padding:32px 48px 45px}.dialog-body>h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:18px 0 23px}.article-hook{font-size:1.15rem;color:var(--accent);line-height:1.6;margin-bottom:25px}.article-copy{font-family:Georgia,"Times New Roman",serif;font-size:1.12rem;line-height:1.85}.article-copy p+p{margin-top:18px}.article-tools{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}.thought{margin:30px 0;background:var(--soft);padding:24px 26px;border-radius:15px}.thought h3{font-size:.85rem;margin-bottom:8px}.thought p{font-size:.88rem}.rabbit-section{border-top:1px solid var(--line);margin-top:30px;padding-top:27px}.rabbit-section h3{font-size:1.15rem}.rabbit-section>p{margin-top:7px;font-size:.83rem;color:var(--muted)}.rabbit-links{display:grid;gap:9px;margin-top:20px}.rabbit-link{display:flex;justify-content:space-between;align-items:center;gap:20px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px 17px;background:var(--bg)}.rabbit-link:hover{border-color:var(--accent)}.rabbit-link small{display:block;color:var(--muted);font-size:.65rem;margin-bottom:4px}.rabbit-link strong{font-weight:550;font-size:.9rem}.sources{margin-top:28px;font-size:.75rem;color:var(--muted)}.sources ul{padding-left:20px}.sources li+li{margin-top:5px}.sources a{overflow-wrap:anywhere}.trail{font-size:.72rem;color:var(--muted);line-height:1.7;overflow-wrap:anywhere}.trail button{font:inherit;color:var(--accent);border:0;background:none;padding:2px;text-decoration:underline}.settings{width:min(550px,100% - 32px)}.settings .dialog-body{padding:28px 30px}.settings h2{font-size:2.2rem;margin:0 0 15px}.settings-intro{font-size:.84rem;color:var(--muted);margin-bottom:25px}.setting-row{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding:18px 0}.setting-row label{font-size:.88rem;font-weight:600}.setting-row small{display:block;color:var(--muted);font-weight:400;font-size:.72rem;max-width:290px;margin-top:4px}.setting-row select{max-width:155px;border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--bg);color:var(--ink);font-size:.8rem}.setting-row input[type=checkbox]{width:22px;height:22px;accent-color:var(--accent);flex-shrink:0}.storage-status{font-size:.7rem;color:var(--muted)}.game-grid{display:grid;gap:12px}.game-option{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:12px;padding:15px;min-height:48px;text-align:left}.game-option:hover{background:var(--soft)}.game-feedback{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--soft)}.game-panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);padding:30px}.pill{display:inline-block;padding:5px 10px;border-radius:20px;background:var(--soft);font-size:.75rem}
+:root[data-theme=dark]{color-scheme:dark;--bg:#172826;--paper:#203431;--ink:#f0f1de;--muted:#bacbc2;--line:#496058;--soft:#2c4940;--green:#bfd6b8;--yellow:#e4d694;--purple:#cfc1df;--blue:#b7d3dc;--accent:#c2dfa8;--shadow:0 16px 60px #0003}:root[data-theme=dark] .brand-icon{color:#172826}:root[data-theme=dark] .core{background:#304e42}:root[data-theme=dark] .orbit-label{color:#203b30}:root[data-theme=dark] .orbit-label.one{color:var(--ink)}:root[data-contrast=true]{--muted:var(--ink);--line:var(--ink)}:root[data-text=large]{font-size:18px}:root[data-text=xlarge]{font-size:20px}:root[data-spacing=true] body{line-height:1.9;letter-spacing:.015em;word-spacing:.06em}:root[data-spacing=true] .article-copy{line-height:2.1}:root[data-motion=reduce] *{scroll-behavior:auto!important;transition:none!important;animation:none!important}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(min-width:1500px){.hero{padding:80px 0}.universe{min-height:420px}}@media(max-width:1000px){.wrap{width:calc(100% - 48px)}.local-note{display:none}.hero{gap:25px;padding:50px 0}.universe{min-height:340px}.orbit-label.two{right:0}.orbit-label.three{left:0}.cards{gap:16px}.card-content{padding:20px}.hero-foot{gap:20px}.header-inner{gap:15px}.nav-button{padding:10px 13px}}@media(max-width:760px){.header-inner{flex-wrap:wrap;padding-top:18px;gap:14px;min-height:120px}.brand{font-size:1.25rem}.header-right{margin-left:auto}.top-nav{order:3;width:100%;border-top:1px solid var(--line);padding:10px 0;justify-content:center}.nav-button{flex:1;font-size:.8rem;padding:9px}.wrap{width:calc(100% - 36px)}.hero{grid-template-columns:1fr;gap:14px;padding:38px 0}.hero-copy>p{max-width:550px}.hero-copy h1 br{display:none}.hero .eyebrow{margin-bottom:19px}.hero-foot{margin-top:23px}.universe{min-height:290px;max-width:440px;width:100%;margin:7px auto}.core{width:135px;height:135px}.core svg{width:85px;height:85px}.orbit-label{font-size:.67rem;padding:7px 13px}.orbit-label.two{top:72px}.orbit-label.three{bottom:58px}.orbit-label.four{bottom:0}.discovery-band{align-items:flex-start;gap:10px}.discovery-band .band-text{gap:10px}.progress-pill{font-size:.65rem;padding:8px 9px}.band-text strong{font-size:.78rem}.band-text p{font-size:.7rem}.band-symbol{display:none}.library{padding:35px 0 50px}.section-heading{align-items:flex-start;flex-direction:column;gap:20px}.search-wrap{min-width:0;width:100%}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card-content{padding:18px}.card-art{height:115px}.card-tag{font-size:.5rem;left:12px;max-width:70%}.save-button{right:8px;top:8px;width:32px;height:32px}.card-content h3{font-size:1rem}.card-meta{font-size:.58rem;flex-wrap:wrap}.card-content>p{font-size:.75rem}.card-bottom{font-size:.6rem}.footer-inner{align-items:flex-start;flex-direction:column}.footer p{text-align:left}.dialog-body{padding:25px}.dialog-bar{padding:12px 17px}.page-view{padding:35px 0 55px}.collection-stats{gap:18px;flex-wrap:wrap}.game-panel{padding:20px}.filter{font-size:.7rem;padding:7px 11px}}@media(max-width:440px){.cards{grid-template-columns:1fr}.card-art{height:145px}.card-tag{font-size:.62rem}.card-content h3{font-size:1.2rem}.card-meta{font-size:.7rem}.card-content>p{font-size:.86rem}.card-bottom{font-size:.73rem}.hero-actions{gap:8px}.hero-actions .button{padding:12px 17px;font-size:.8rem}.hero-foot{font-size:.67rem}.discovery-band{flex-wrap:wrap}.progress-pill{margin-top:6px}.settings .dialog-body{padding:24px 20px}.setting-row{gap:10px}.setting-row select{max-width:130px}.trail{font-size:.65rem}.game-panel{padding:17px}}
+@media(max-width:760px){.universe{overflow:clip}.top-nav{min-width:0}.nav-button{padding-inline:7px;white-space:normal}.hero-foot{flex-wrap:wrap}}
+
+.game-tabs {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin-bottom:1.5rem}
+.game-tabs .button {text-align:left;white-space:normal;min-height:4.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.2rem}
+.game-tabs .button[aria-pressed="true"] {outline:2px solid currentColor;outline-offset:3px}
+.game-tabs small {font-size:.75rem;font-weight:400}
+.game-panel {padding:clamp(1rem,3vw,2rem);border:1px solid var(--line,#bac6c6);border-radius:1.25rem;background:var(--paper,#fff)}
+.game-panel h3 {margin:0 0 .5rem}.game-panel h4 {font-size:1.2rem;line-height:1.5;margin:.65rem 0 1rem}
+.game-instructions {max-width:65ch;margin:.5rem 0 1.4rem}.game-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.game-option {display:block;text-align:left;white-space:normal;min-height:3.5rem;height:100%;padding:1rem;border:1px solid var(--line,#bac6c6);border-radius:.7rem;background:var(--paper,#fff);color:inherit;font:inherit;cursor:pointer}
+.game-option:hover:not(:disabled) {border-color:currentColor}.game-option[aria-pressed="true"] {outline:3px solid var(--accent,#126a62);outline-offset:1px}
+.game-option[data-result="correct"] {border-width:3px;border-color:var(--accent,#126a62)}
+.game-option:disabled {cursor:default;opacity:.7}.game-feedback {min-height:2em;margin:1.2rem 0 .8rem;font-weight:600;max-width:75ch}
+.game-meta {display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.85rem;margin-bottom:1rem}
+.game-actions {display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem}.match-columns {display:grid;grid-template-columns:1fr 1fr;gap:1rem}.match-stack {display:grid;gap:.6rem;align-content:start}
+.match-stack .game-option {min-height:5.5rem}.game-panel ol {padding-left:1.5rem}.timeline-list {display:grid;gap:.6rem}
+.timeline-list li {padding:.75rem;border:1px solid var(--line,#bac6c6);border-radius:.6rem}.timeline-row {display:flex;align-items:center;justify-content:space-between;gap:1rem}.timeline-moves {display:flex;gap:.3rem;flex-shrink:0}
+.timeline-moves button {padding:.4rem .65rem;min-height:2.5rem}.timeline-year {font-weight:700;display:block;margin-top:.3rem}.atom-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+.atom-tile {padding:1rem .5rem;text-align:center;border:1px solid var(--line,#bac6c6);border-radius:.7rem}.atom-tile strong {display:block;font-size:1.8rem}.atom-tile p {margin:.3rem 0 .7rem}.atom-tile .game-actions {justify-content:center;gap:.3rem;margin:0}.atom-tile button {padding:.4rem .7rem;min-height:2.5rem}
+.formula-display {font-size:1.4rem;font-weight:700;padding:1rem 0}.game-sources {font-size:.8rem;margin-top:1.5rem}.game-sources a {margin-right:.75rem}.game-panel fieldset {padding:0;border:0;margin:0}.game-panel legend {font-weight:700;font-size:1.2rem;padding:0;margin-bottom:1rem}
+@media(max-width:680px){.game-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.atom-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-grid{grid-template-columns:1fr}.match-columns{gap:.5rem}.match-stack .game-option{padding:.65rem;font-size:.9rem}.timeline-row{flex-wrap:wrap}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><div class="wrap header-inner">
+<a class="brand" href="#" aria-label="WonderBrain home"><span class="brand-icon" aria-hidden="true">w</span>WonderBrain<small>v3.1</small></a>
+<nav class="top-nav" aria-label="Main navigation"><button type="button" class="nav-button" data-view="explore" aria-current="page">Explore</button><button type="button" class="nav-button" data-view="games">Play & learn</button><button type="button" class="nav-button" data-view="collection">My collection <span id="saved-count">0</span></button></nav>
+<div class="header-right"><span class="local-note">A little more curious</span><button type="button" id="settings-open" class="icon-button" aria-label="Accessibility and display settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="m4 8 8 2 8-2M12 10v5m0-2-5 8m5-8 5 8"/></svg></button></div>
+</div></header>
+<main id="main" tabindex="-1">
+<div id="explore-view" class="wrap">
+<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><div class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> Made for wandering minds</div><h1 id="hero-title">Follow your<br> next <em>what if.</em></h1><p>Big ideas. Unexpected connections. A place to explore the universe, one good question at a time.</p><div class="hero-actions"><button type="button" id="surprise" class="button">Surprise me <span aria-hidden="true">↗</span></button><a href="#discoveries" class="button secondary">Find your rabbit hole <span aria-hidden="true">↓</span></a></div><div class="hero-foot"><span>13 worlds to explore</span><span>4 ways to play</span><span>Endless connections</span></div></div>
+<div class="universe" role="img" aria-label="An orbit of connected ideas: science, language, history, and imagination"><div class="orbit"></div><div class="orbit second"></div><div class="orbit third"></div><div class="core"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M60 16v88M16 60h88M29 29l62 62m0-62L29 91"/><ellipse cx="60" cy="60" rx="22" ry="44" transform="rotate(45 60 60)"/><ellipse cx="60" cy="60" rx="22" ry="44" transform="rotate(-45 60 60)"/><circle cx="60" cy="60" r="8" fill="currentColor"/></svg></div><span class="orbit-label one"><i aria-hidden="true">✦</i> A universe of questions</span><span class="orbit-label two"><i aria-hidden="true">λ</i> Language</span><span class="orbit-label three"><i aria-hidden="true">⌁</i> Living things</span><span class="orbit-label four"><i aria-hidden="true">✧</i> Imagined worlds</span><span class="star" aria-hidden="true">✳</span><span class="star small" aria-hidden="true">✦</span><span class="dot"></span><span class="dot two"></span></div></section>
+<aside class="discovery-band" aria-label="Your exploration progress"><div class="band-text"><span class="band-symbol" aria-hidden="true">↳</span><div><strong>Everything is connected. Start anywhere.</strong><p>Every discovery opens three doors to somewhere new.</p></div></div><div class="progress-pill"><span class="progress-dot"></span><span id="progress-label">0 discoveries explored</span></div></aside>
+<section class="library" id="discoveries" aria-labelledby="library-title"><div class="section-heading"><div><p class="eyebrow">The curiosity library</p><h2 id="library-title">Where will you wander?</h2></div><div class="search-wrap"><label for="search" class="sr-only">Search all discoveries</label><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input type="search" id="search" placeholder="Try stars, cells, or Middle-earth…" autocomplete="off"></div></div><div id="filters" class="filters" role="group" aria-label="Filter by subject"></div><div class="result-line"><span id="result-count" role="status" aria-live="polite"></span><button type="button" id="clear-filters" class="text-button" hidden>Clear filters</button></div><div id="discovery-cards" class="cards"></div><p class="bottom-note">You don't have to know where a question will take you.</p></section>
+</div>
+<section id="games-view" class="wrap page-view" aria-labelledby="games-title" hidden><div class="page-intro"><p class="eyebrow">The playroom</p><h1 id="games-title">Put curiosity into play.</h1><p>Four small adventures for your brain. Take your time, experiment, and learn something along the way.</p></div><div id="games-root"></div></section>
+<section id="collection-view" class="wrap page-view" aria-labelledby="collection-title" hidden><div class="page-intro"><p class="eyebrow">Your pocket universe</p><h1 id="collection-title">Keep the good questions.</h1><p>Save a discovery with its bookmark button, then come back whenever curiosity calls.</p><div class="collection-stats"><span><strong id="stat-saved">0</strong> saved</span><span><strong id="stat-read">0</strong> explored</span><span><strong id="stat-subjects">0</strong> subjects visited</span></div><p class="storage-status" id="storage-status">Your collection and settings stay in this browser. No account needed.</p></div><div class="cards" id="collection-cards"></div></section>
+<noscript><div class="wrap page-view"><h2>WonderBrain needs JavaScript</h2><p>Enable JavaScript in your browser to explore the library and play the games. No account, download, or sign-in is required.</p></div></noscript>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span class="brand"><span aria-hidden="true">✳</span> Stay curious.</span><p>WonderBrain v3.1 · Made for the joy of finding out.<br>Science & history are evidence based. Tolkien and D&D entries explore fictional worlds.</p></div></footer>
+<dialog id="article-dialog" aria-labelledby="article-title"><div class="dialog-bar"><span class="eyebrow">Down the rabbit hole</span><button type="button" class="icon-button" id="article-close" aria-label="Close discovery"><span aria-hidden="true">✕</span></button></div><div id="article-content" class="dialog-body"></div></dialog>
+<dialog id="settings-dialog" class="settings" aria-labelledby="settings-title"><div class="dialog-bar"><span class="eyebrow">Make yourself comfortable</span><button type="button" class="icon-button" id="settings-close" aria-label="Close settings"><span aria-hidden="true">✕</span></button></div><div class="dialog-body"><h2 id="settings-title">Your way to wander.</h2><p class="settings-intro">Adjust WonderBrain to suit you. Every activity works with a keyboard, without a time limit.</p><div class="setting-row"><label for="theme">Appearance</label><select id="theme"><option value="system">Use device setting</option><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="setting-row"><label for="text-size">Text size</label><select id="text-size"><option value="standard">Standard</option><option value="large">Large</option><option value="xlarge">Extra large</option></select></div><div class="setting-row"><label for="contrast">Higher contrast<small>Stronger text and borders.</small></label><input id="contrast" type="checkbox"></div><div class="setting-row"><label for="spacing">Roomier reading<small>More space between lines and words.</small></label><input id="spacing" type="checkbox"></div><div class="setting-row"><label for="motion">Reduce motion<small>Your device's reduced motion preference is also respected.</small></label><input id="motion" type="checkbox"></div><p class="storage-status">Use Tab to move, Enter or Space to activate buttons, and Escape to close a dialog. Settings save on this device when browser storage is available.</p></div></dialog>
+<div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<script>
+'use strict';
+const KNOWLEDGE = [
+  {
+    id: 'testable-ideas', subject: 'Science', title: 'A question the universe can answer',
+    hook: 'A useful scientific idea risks being wrong in a way we can check.',
+    body: [
+      'A hypothesis connects an explanation to observations we could make. Suppose you think a plant grows toward a window because of light. Turning the plant and tracking its growth creates a prediction. Alternative explanations, such as a nearby heat source, suggest additional comparisons that can separate competing ideas.',
+      'Science is a network of observations, models, criticism, and repeated investigation. A single experiment rarely settles a large question. Confidence grows when different methods point toward the same explanation, and changes when better evidence arrives. Asking what result would change your mind is a powerful place to begin.'
+    ],
+    tryIt: 'Choose an everyday claim. Write one prediction and one observation that would count against it.',
+    links: ['models', 'exoplanets', 'probability'],
+    sources: [{label: 'National Academies: How Science Works', url: 'https://www.nationalacademies.org/read/26919/chapter/3'}]
+  },
+  {
+    id: 'measurement', subject: 'Science', title: 'Every measurement has a margin',
+    hook: 'The digits on an instrument are only part of the result.',
+    body: [
+      'Measurements compare something in the world with a reference. A ruler has finite markings; a thermometer can drift; repeated readings can scatter. Scientists describe uncertainty to show how much the available information constrains a quantity. An uncertainty estimate is part of an honest result, not an admission that measurement failed.',
+      'Precision and accuracy ask different questions. Closely grouped measurements may still share a bias, such as a scale that always reads too high. Repetition can reveal scatter, while calibration helps uncover systematic problems. The right number of reported digits depends on what the instrument and method can actually support.'
+    ],
+    tryIt: 'Measure a table three times from different starting positions. Which differences come from the method?',
+    links: ['quantum-clocks', 'probability', 'testable-ideas'],
+    sources: [{label: 'NIST: Measurement Uncertainty', url: 'https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty'}]
+  },
+  {
+    id: 'models', subject: 'Science', title: 'Why an imperfect model can work',
+    hook: 'A model earns its place by answering a question, not by copying every detail.',
+    body: [
+      'A model is a representation used to reason about a system. It might be a diagram, a mathematical equation, or a computer simulation. Its assumptions make some questions tractable while leaving details aside. A map that shows every leaf would be a poor guide for finding a train station.',
+      'To evaluate a model, ask what it predicts, where those predictions have been checked, and where its assumptions may fail. Different models can illuminate different scales of the same phenomenon. Revising a model after a mismatch with evidence is one way scientific explanations become more useful and more reliable.'
+    ],
+    tryIt: 'Sketch your neighborhood for a pedestrian, then for a bird. Which details change with the purpose?',
+    links: ['graphs', 'superposition', 'stellar-fusion'],
+    sources: [{label: 'National Academies: How Science Works', url: 'https://www.nationalacademies.org/read/26919/chapter/3'}]
+  },
+  {
+    id: 'phonemes', subject: 'Linguistics', title: 'The smallest sound that changes a word',
+    hook: 'A tiny change in speech can redraw the boundary between two meanings.',
+    body: [
+      'In a spoken language, a phoneme is a contrastive sound category. English speakers distinguish the first sounds in pin and bin because swapping those sounds can change the word. The important unit is a language-specific category, rather than every small physical difference a microphone could record in the sound wave.',
+      'The same phoneme can have several pronunciations, called allophones. Many English speakers release the p in pin with a stronger puff of air than the p in spin, yet treat both as p. Comparing languages reveals that a distinction ignored in one language can be meaningful in another.'
+    ],
+    tryIt: 'Hold a hand near your mouth and say pin, then spin. Compare the initial puff of air.',
+    links: ['language-change', 'elvish', 'rosetta'],
+    sources: [{label: 'Anderson et al.: Phonemes and allophones', url: 'https://ecampusontario.pressbooks.pub/essentialsoflinguistics2/chapter/4-1-phonemes-and-allophones/'}]
+  },
+  {
+    id: 'language-change', subject: 'Linguistics', title: 'Language never stands still',
+    hook: 'Ordinary conversations quietly carry language into its next form.',
+    body: [
+      'Languages change in pronunciation, vocabulary, meaning, and grammar. New technology supplies obvious new words, but changes also emerge through ordinary variation and social interaction. A form that sounds unfamiliar today may become routine for a later generation. Change does not require a language to become either better or worse.',
+      'Historical linguists compare patterns across records and related languages. Regular correspondences can reveal relationships that a single similar word would not establish. Language history also records contact between communities. Following the path of a borrowed word can connect an everyday expression to journeys, trade, migration, and changing cultural priorities.'
+    ],
+    tryIt: 'List three words you use differently from an older relative. Is the difference meaning, pronunciation, or frequency?',
+    links: ['silk-roads', 'elvish', 'mutation'],
+    sources: [{label: 'Anderson et al.: Why do languages change?', url: 'https://ecampusontario.pressbooks.pub/essentialsoflinguistics2/chapter/14-1-why-do-languages-change/'}]
+  },
+  {
+    id: 'signed-language', subject: 'Linguistics', title: 'Grammar you can see',
+    hook: 'Language is larger than speech, and sign languages make that beautifully clear.',
+    body: [
+      'American Sign Language is a complete natural language with its own grammar. Hands, facial expressions, and movements contribute to its expression. ASL is not simply English converted into gestures. Understanding it requires learning its linguistic patterns, just as understanding a spoken language requires more than recognizing a few words.',
+      'There is no single universal sign language. ASL and British Sign Language are distinct, even though English is widely spoken in both countries. The histories of signing communities shape their languages. This is a useful reminder that language relationships follow human communities and contact, rather than political maps alone.'
+    ],
+    tryIt: 'Visit the source to learn how ASL differs from spoken English; avoid assuming one gesture translates a whole sentence.',
+    links: ['phonemes', 'language-change', 'models'],
+    sources: [{label: 'NIH NIDCD: American Sign Language', url: 'https://www.nidcd.nih.gov/health/american-sign-language'}]
+  },
+  {
+    id: 'rosetta', subject: 'History', title: 'One decree, three scripts',
+    hook: 'A repeated message helped scholars recover a lost way of reading.',
+    body: [
+      'The Rosetta Stone carries an ancient Egyptian decree in hieroglyphic, Demotic, and Greek scripts. The Greek text gave scholars a crucial comparison for understanding the Egyptian writing. These are three scripts representing two languages, a distinction that matters when describing how the evidence helped the process of decipherment.',
+      'Decipherment was a cumulative effort involving comparison, hypotheses about names, and tests against other inscriptions. The stone also has a history of warfare and contested ownership. An artifact can be evidence for ancient politics, modern scholarship, and imperial collecting at once, depending on the questions we bring to it.'
+    ],
+    tryIt: 'Invent symbols for a short message, then give someone a second version with a few known names. What becomes easier?',
+    links: ['phonemes', 'testable-ideas', 'printing'],
+    sources: [{label: 'British Museum: Hieroglyphs exhibition guide', url: 'https://www.britishmuseum.org/sites/default/files/2022-10/Hieroglyphs_unlocking_ancient_Egypt_large_print_guide_The_British_Museum.pdf'}]
+  },
+  {
+    id: 'printing', subject: 'History', title: 'Printing has more than one beginning',
+    hook: 'The familiar Gutenberg story is one chapter in a much wider history.',
+    body: [
+      'Printing developed in East Asia centuries before Gutenberg worked in Europe. Gutenberg is associated with an influential European system of metal movable type and book production in the fifteenth century. Calling him the inventor of all printing erases earlier technologies and the communities that created and used them.',
+      'A printing system needs more than individual letters. Materials, ink, presses, labor, financing, and readers all help determine whether it succeeds. Looking at the whole system changes a story about one inventor into a history of connected skills. Books themselves preserve clues about the processes and choices behind them.'
+    ],
+    tryIt: 'Imagine producing one hundred identical pages. Which tasks could be reused, and which must be repeated?',
+    links: ['silk-roads', 'language-change', 'ribosomes'],
+    sources: [{label: 'Library of Congress: Johannes Gutenberg', url: 'https://guides.loc.gov/gutenberg/the-printer'}]
+  },
+  {
+    id: 'silk-roads', subject: 'History', title: 'The Silk Roads were a network',
+    hook: 'Goods traveled through many hands, and ideas traveled with them.',
+    body: [
+      'The Silk Roads name describes interconnected routes of trade and cultural exchange rather than one uninterrupted road. Across changing periods, travelers linked towns, ports, and regions. Silk was one valuable product among many. The modern name gathers a complicated history of local journeys and distant connections into a memorable image.',
+      'Commercial exchange also brought languages, artistic practices, technologies, and religious ideas into contact. Cities became places where knowledge could be adapted rather than merely passed along unchanged. A network view helps explain how influence can travel much farther than any individual traveler, through a chain of encounters and reinterpretations.'
+    ],
+    tryIt: 'Trace five places involved in making an everyday object. How many different kinds of knowledge connect them?',
+    links: ['graphs', 'language-change', 'printing'],
+    sources: [{label: 'UNESCO: About the Silk Roads', url: 'https://www.unesco.org/en/silk-roads/about-silk-roads?hub=196704'}]
+  },
+  {
+    id: 'moon-phases', subject: 'Astronomy', title: 'The Moon changes its angle',
+    hook: 'The monthly phases are a lesson in geometry, not Earth casting a shadow.',
+    body: [
+      'Sunlight illuminates roughly half of the Moon at any moment. As the Moon orbits Earth, our viewing angle changes, so we see different portions of that bright half. The ordinary sequence from new Moon to full Moon and back is caused by this geometry. Lunar eclipses are a separate alignment.',
+      'The Moon rotates while it orbits, keeping approximately the same face toward Earth. That familiar face still experiences day and night. Far side does not mean permanently dark side. Thinking about what the Sun, Earth, and Moon each see is a good way to untangle the different meanings of dark.'
+    ],
+    tryIt: 'Use a lamp and a ball to model phases, keeping the lamp fixed while moving the ball around you.',
+    links: ['models', 'starlight', 'circadian'],
+    sources: [{label: 'NASA: Moon Phases', url: 'https://science.nasa.gov/moon/moon-phases/'}]
+  },
+  {
+    id: 'exoplanets', subject: 'Astronomy', title: 'Finding worlds by missing light',
+    hook: 'A tiny dip in a star’s brightness can reveal a planet we cannot see directly.',
+    body: [
+      'When a planet passes between its star and our telescope, it can block a small fraction of the starlight. Repeated dips form a transit signal. Their timing helps reveal the orbital period, while their depth helps estimate the planet’s size relative to the star. This method requires a favorable viewing alignment.',
+      'A transit-like dip is evidence to investigate, not automatic proof of a planet. Other stars and instrumental effects can imitate signals. Astronomers compare repeated observations and complementary measurements to rule out alternatives. This makes planet hunting a vivid example of reasoning from indirect evidence while keeping competing explanations in play.'
+    ],
+    tryIt: 'Move a small bead across a distant light from your viewpoint. How does its apparent size affect the blocked light?',
+    links: ['testable-ideas', 'starlight', 'probability'],
+    sources: [{label: 'NASA: How We Find and Characterize Exoplanets', url: 'https://science.nasa.gov/exoplanets/how-we-find-and-characterize/'}]
+  },
+  {
+    id: 'starlight', subject: 'Astronomy', title: 'Light is a cosmic messenger',
+    hook: 'A telescope can learn chemistry from light that crossed space for years.',
+    body: [
+      'Visible light is one part of the electromagnetic spectrum, alongside radio waves, infrared, ultraviolet, X-rays, and gamma rays. Different wavelengths reveal different physical processes. Looking only with human eyes would miss much of the universe. Astronomy combines instruments to build a richer view than any one band can provide.',
+      'A spectrum separates light by wavelength. Patterns in it can carry information about material that emitted or absorbed the light, as well as motion and temperature. A distant object becomes more than a bright dot. Interpreting its light turns observation into a conversation between astronomy, chemistry, and quantum physics.'
+    ],
+    tryIt: 'Think of a place viewed with ordinary and thermal cameras. What different questions would the images answer?',
+    links: ['periodic-table', 'superposition', 'stellar-fusion'],
+    sources: [{label: 'NASA: Sensing the Universe', url: 'https://science.nasa.gov/universe/sensing-the-universe/'}]
+  },
+  {
+    id: 'stellar-fusion', subject: 'Astrophysics', title: 'A star balances on fusion',
+    hook: 'Gravity squeezes inward while a star’s hot interior pushes outward.',
+    body: [
+      'During the main sequence stage, stars fuse hydrogen into helium in their cores. Fusion releases energy and helps maintain the pressure that supports the star against gravitational collapse. A star is therefore a changing physical system, not a solid ball on fire in the ordinary chemical sense of burning.',
+      'Mass strongly influences a star’s lifetime. Massive stars use their fuel rapidly and can live much shorter lives than smaller stars. Later stages create and distribute many heavier elements through stellar evolution and explosive events. The materials in future planets can inherit a history that began inside earlier generations of stars.'
+    ],
+    tryIt: 'Why might a larger fuel supply still run out sooner? Compare a candle with a roaring bonfire.',
+    links: ['periodic-table', 'black-holes', 'catalysts'],
+    sources: [{label: 'NASA: Stars', url: 'https://science.nasa.gov/universe/stars/'}]
+  },
+  {
+    id: 'black-holes', subject: 'Astrophysics', title: 'A boundary light cannot leave',
+    hook: 'The event horizon changes which paths can lead back to the outside universe.',
+    body: [
+      'A black hole is a region where gravity is so strong that light cannot escape from inside its event horizon. The horizon is a boundary, not a solid surface. Astronomers study black holes through their effects on nearby matter and light, and through signals such as gravitational waves from merging systems.',
+      'A black hole does not pull in everything regardless of distance. Far away, its gravitational influence depends on its mass, like other objects. Matter can orbit rather than fall straight in. Distinguishing the dark horizon from glowing gas around it helps make sense of the dramatic images associated with black holes.'
+    ],
+    tryIt: 'Draw a dark circle surrounded by a bright disk. Label which region emits light and which boundary prevents escape.',
+    links: ['gravitational-waves', 'stellar-fusion', 'models'],
+    sources: [{label: 'NASA: Black Holes', url: 'https://science.nasa.gov/universe/black-holes/'}]
+  },
+  {
+    id: 'gravitational-waves', subject: 'Astrophysics', title: 'Listening to spacetime',
+    hook: 'Colliding compact objects can send a changing stretch of space across the cosmos.',
+    body: [
+      'Gravitational waves are propagating disturbances in spacetime predicted by general relativity. Orbiting compact objects such as black holes can produce waves as their system evolves. These signals travel at the speed of light and carry information about the source, offering an observational channel different from ordinary electromagnetic radiation.',
+      'Detectors such as LIGO compare extremely small changes in distances along long instrument arms. A measured pattern can be compared with predictions for merging systems. Multiple detectors and careful checks help separate a cosmic signal from local disturbance. The discovery connects precise measurement on Earth with violent events far away.'
+    ],
+    tryIt: 'Imagine two detectors on different continents. Why would matching signals be more persuasive than a signal in only one?',
+    links: ['measurement', 'black-holes', 'testable-ideas'],
+    sources: [{label: 'LIGO Laboratory: What are Gravitational Waves?', url: 'https://www.ligo.caltech.edu/page/what-are-gw'}]
+  },
+  {
+    id: 'selection', subject: 'Biology', title: 'Evolution has no finish line',
+    hook: 'Natural selection changes populations without planning for their future.',
+    body: [
+      'Natural selection occurs when heritable differences influence reproductive success in a particular environment. Over generations, some variants can become more common. Individuals do not evolve a needed trait simply because they need it. Selection works with existing variation, while mutation, migration, and genetic drift also contribute to evolutionary change.',
+      'A trait’s usefulness depends on context. A feature that helps in one habitat may cost energy or create a disadvantage in another. Evolution therefore does not arrange all organisms on a single ladder of progress. It produces branching histories shaped by environments, ancestry, constraints, and changing opportunities for reproduction.'
+    ],
+    tryIt: 'Imagine pale and dark insects on two different backgrounds. Predict how a change of background could reverse an advantage.',
+    links: ['mutation', 'language-change', 'models'],
+    sources: [{label: 'UC Berkeley Museum of Paleontology: Natural Selection', url: 'https://evolution.berkeley.edu/evolution-101/mechanisms-the-processes-of-evolution/natural-selection/'}]
+  },
+  {
+    id: 'mutation', subject: 'Biology', title: 'A change in the letters of life',
+    hook: 'A DNA change is a source of variation, not a guaranteed disaster or superpower.',
+    body: [
+      'A mutation is a change in a DNA sequence. Changes can arise during copying or after exposure to particular agents, and their effects vary widely. Many have little noticeable consequence; others can matter greatly. The location of a change and the biological context help determine what happens as a result.',
+      'In humans, mutations in egg or sperm lineages can be inherited by offspring, while mutations limited to other body cells generally are not. This distinction separates an individual cell’s history from the history of a family. DNA repair and many layers of regulation also complicate the simple metaphor of a genetic typo.'
+    ],
+    tryIt: 'Change one letter in a sentence, then delete one letter. Why might the consequences differ between positions?',
+    links: ['selection', 'ribosomes', 'adaptive'],
+    sources: [{label: 'NHGRI: Mutation', url: 'https://www.genome.gov/genetics-glossary/Mutation'}]
+  },
+  {
+    id: 'circadian', subject: 'Biology', title: 'The clocks inside living things',
+    hook: 'Daily biological rhythms arise from living systems that keep approximate time.',
+    body: [
+      'Circadian rhythms are roughly daily changes in an organism’s biology and behavior. Light and darkness are major environmental influences, but timing also interacts with other cues. In humans, many tissues contain clocks that help coordinate functions such as hormone release, temperature, digestion, and sleep across the day.',
+      'These rhythms involve molecular systems rather than a conscious decision to check the time. Genes and proteins participate in recurring processes, and a coordinating clock helps align the body’s many rhythms. Comparing biological clocks with atomic clocks reveals two very different answers to the same general problem: producing a reliable repeating pattern.'
+    ],
+    tryIt: 'Keep a short, nonjudgmental log of when you feel alert. Look for patterns without treating the log as a diagnosis.',
+    links: ['quantum-clocks', 'moon-phases', 'ribosomes'],
+    sources: [{label: 'NIH NIGMS: Circadian Rhythms', url: 'https://www.nigms.nih.gov/education/fact-sheets/Pages/circadian-rhythms'}]
+  },
+  {
+    id: 'superposition', subject: 'Quantum physics', title: 'Beyond an ordinary either-or',
+    hook: 'Quantum alternatives can combine in a way that produces interference.',
+    body: [
+      'A quantum state can be a superposition of states associated with different possible measurement outcomes. This is more than not knowing which ordinary alternative was secretly present. The amplitudes describing the alternatives can interfere, changing the probabilities observed in experiments. The measurement being considered is essential to describing the alternatives.',
+      'A qubit can be prepared in a superposition relative to a chosen measurement basis, but measuring it still produces an ordinary recorded outcome. Repeating preparations and measurements reveals a statistical pattern. Quantum computing uses controlled transformations and interference; superposition does not let a user read out unlimited answers from one measurement.'
+    ],
+    tryIt: 'Compare a hidden coin with overlapping waves. Which analogy includes cancellation, and where does each analogy fail?',
+    links: ['entanglement', 'starlight', 'models'],
+    sources: [{label: 'NIST: Quantum Computing Explained', url: 'https://www.nist.gov/quantum-information-science/quantum-computing-explained'}]
+  },
+  {
+    id: 'entanglement', subject: 'Quantum physics', title: 'When the whole has the state',
+    hook: 'Some quantum systems cannot be fully described as independent parts.',
+    body: [
+      'Entanglement is a property of a joint quantum state that cannot be reduced to independent states for its components. Measurements can show correlations that exceed what certain classical explanations permit. Those correlations depend on how the systems are prepared and measured, rather than on a magical resemblance between any two distant objects.',
+      'Entanglement is useful in quantum information experiments, communication research, and sensing. It does not provide a controllable channel for sending messages faster than light. A measurement outcome is not freely chosen by the observer, and comparing distant records still requires ordinary communication. Strong correlations and usable signaling are different concepts.'
+    ],
+    tryIt: 'Distinguish receiving a random result from choosing a message. Why would that difference matter for communication?',
+    links: ['superposition', 'quantum-clocks', 'probability'],
+    sources: [{label: 'NIST: Quantum Computing and Communication', url: 'https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=51022'}]
+  },
+  {
+    id: 'quantum-clocks', subject: 'Quantum physics', title: 'Keeping time with atoms',
+    hook: 'The regular behavior of atoms lets us build remarkably consistent clocks.',
+    body: [
+      'Atomic clocks use transitions between atomic energy levels to establish a frequency reference. Counting cycles connects a microscopic quantum process with the time shown by an instrument. The challenge is not finding a tiny mechanical pendulum, but controlling environmental shifts, comparing frequencies, and understanding what limits the measurement.',
+      'Researchers investigate entanglement as a way to reduce particular kinds of measurement noise and improve clock performance. This is a carefully engineered advantage, not a promise of perfect timekeeping. Atomic clocks also support studies of gravity and relativity, showing how a practical measurement tool can become an instrument for testing basic physics.'
+    ],
+    tryIt: 'Invent a clock using a repeating event. List three things that could make its repetition less dependable.',
+    links: ['measurement', 'circadian', 'entanglement'],
+    sources: [{label: 'NIST: Atomic Clocks Meet Quantum Entanglement', url: 'https://www.nist.gov/atomic-clocks/a-powerful-tool-for-science/future-directions-atomic-clocks-meet-quantum-entanglement'}]
+  },
+  {
+    id: 'membranes', subject: 'Cell biology', title: 'A border that makes life possible',
+    hook: 'A cell survives by controlling exchange, not by sealing itself away.',
+    body: [
+      'The plasma membrane separates a cell’s interior from its surroundings. Its lipid bilayer forms a selective boundary, while embedded molecules help regulate movement and communication. A cell needs both distinction and connection: conditions inside must remain workable, even as nutrients, waste products, and signals pass between the cell and its environment.',
+      'A membrane is more like an active border than the wall of a rigid box. Different materials cross by different routes, and surface proteins help cells interact. This boundary makes organized chemistry possible within a crowded world. It also places cell biology in direct conversation with chemistry and immune recognition.'
+    ],
+    tryIt: 'Design a city boundary that must admit supplies, remove waste, and recognize visitors. Which jobs need different gates?',
+    links: ['water', 'innate', 'mitochondria'],
+    sources: [{label: 'NHGRI: Cell Membrane', url: 'https://www.genome.gov/genetics-glossary/Cell-Membrane-Plasma-Membrane'}]
+  },
+  {
+    id: 'mitochondria', subject: 'Cell biology', title: 'More than a cellular powerhouse',
+    hook: 'Tiny compartments help transform energy into forms a cell can use.',
+    body: [
+      'Mitochondria are membrane-bound organelles involved in producing much of the ATP used by many eukaryotic cells. ATP participates in coupling energy-releasing processes to cellular work. Calling mitochondria powerhouses is a useful starting image, but they transform chemical energy rather than create energy from nothing inside a miniature generator.',
+      'Mitochondria have their own small genomes as well as a strong dependence on genes in the nucleus. Different cell types can contain different numbers of mitochondria, reflecting differing demands. Their internal membranes matter to their function, linking the organization of physical space with the management of chemical reactions.'
+    ],
+    tryIt: 'Compare the likely energy demands of an actively contracting muscle cell and a resting storage cell.',
+    links: ['membranes', 'catalysts', 'selection'],
+    sources: [{label: 'NHGRI: Mitochondria', url: 'https://www.genome.gov/genetics-glossary/Mitochondria'}]
+  },
+  {
+    id: 'ribosomes', subject: 'Cell biology', title: 'Reading a message into a protein',
+    hook: 'Cells turn sequence information into physical molecular machinery.',
+    body: [
+      'A ribosome is a structure made of RNA and proteins that helps synthesize proteins. It reads a messenger RNA sequence and assembles amino acids into a chain. Transfer RNAs connect the sequence being read with the amino acids being added, making translation a coordinated molecular process rather than a simple copying operation.',
+      'The growing chain can fold into a shape that contributes to a protein’s function. This connects genetic information with the structures and activities that make cells work. The word translation is an analogy with language, but its mechanism is chemical: molecules interact according to their properties in a regulated cellular environment.'
+    ],
+    tryIt: 'Create a three-symbol code for colored beads. Translate a short message, then see what a shifted starting point changes.',
+    links: ['mutation', 'catalysts', 'phonemes'],
+    sources: [{label: 'NHGRI: Ribosome', url: 'https://www.genome.gov/genetics-glossary/Ribosome'}]
+  },
+  {
+    id: 'innate', subject: 'Immune biology', title: 'The defenses already on duty',
+    hook: 'Immune protection begins before a new invader has a familiar name.',
+    body: [
+      'Innate defenses include physical barriers and responses that recognize broad patterns associated with microbes or damage. Cells such as phagocytes can engulf material, while other signals help coordinate a response. These defenses can act rapidly. They also interact with adaptive immunity, so the two systems are partners rather than separate armies.',
+      'The immune system must respond in context. A useful response to infection can also damage surrounding tissue if poorly controlled. Thinking only in terms of stronger defenses misses the importance of regulation. A successful system balances detection, response, repair, and restraint across many types of cells and chemical messages.'
+    ],
+    tryIt: 'Imagine an alarm that detects both smoke and harmless steam. What tradeoff appears when you change its sensitivity?',
+    links: ['adaptive', 'membranes', 'probability'],
+    sources: [{label: 'NIH Bookshelf: Innate Immunity', url: 'https://www.ncbi.nlm.nih.gov/books/NBK26846/'}]
+  },
+  {
+    id: 'adaptive', subject: 'Immune biology', title: 'Recognition with a finer target',
+    hook: 'Adaptive immunity builds responses around particular molecular features.',
+    body: [
+      'B cells and T cells are central to adaptive immunity. Their receptors support recognition of particular antigens, and appropriate activation can expand selected cell populations. B cells can give rise to antibody-secreting cells. Different T-cell populations have different roles, including coordinating responses or killing infected cells in suitable circumstances.',
+      'This specificity is powerful but does not operate in isolation. Signals from innate responses help shape adaptive responses, while mechanisms of tolerance help limit harmful reactions to the body’s own components. Understanding immunity therefore requires following communication and regulation, as well as recognizing the names of its many cellular participants.'
+    ],
+    tryIt: 'Compare a general motion alarm with a lock that recognizes a particular key. Where does each analogy help or mislead?',
+    links: ['innate', 'immune-memory', 'ribosomes'],
+    sources: [{label: 'NIH NIGMS: What Is the Immune System?', url: 'https://www.nigms.nih.gov/biobeat/2023/12/what-is-the-immune-system'}]
+  },
+  {
+    id: 'immune-memory', subject: 'Immune biology', title: 'A memory made of cells',
+    hook: 'A previous encounter can reshape how the immune system responds next time.',
+    body: [
+      'After an adaptive response, some B and T cells can persist as memory populations. Later encounters with a related antigen can then produce a faster or more effective response. Antibody-producing plasma cells can also contribute to lasting protection. Immune memory is a biological process with multiple components, rather than a conscious recollection.',
+      'Vaccination uses this capacity to prepare immune responses without requiring the full risks of the disease it targets. The strength and duration of protection vary by pathogen, vaccine, and person. General principles explain why preparation can help, while specific decisions and schedules belong to current clinical guidance and individual medical care.'
+    ],
+    tryIt: 'Compare training before a challenge with learning during the challenge. What does preparation change, and what remains uncertain?',
+    links: ['adaptive', 'selection', 'testable-ideas'],
+    sources: [{label: 'MedlinePlus: Immune response', url: 'https://www.medlineplus.gov/ency/article/000821.htm'}]
+  },
+  {
+    id: 'primes', subject: 'Math', title: 'The building blocks of multiplication',
+    hook: 'Prime numbers are simple to define and endlessly rich to investigate.',
+    body: [
+      'A prime is a whole number greater than one with exactly two positive divisors: one and itself. Thirteen is prime, while twelve factors into smaller whole numbers. Every whole number greater than one has a prime factorization that is unique apart from order. One is neither prime nor composite.',
+      'Unique factorization makes primes useful building blocks, but their distribution contains subtle patterns. Testing small examples can suggest a conjecture; proving a statement requires an argument that covers every allowed case. Mathematics therefore distinguishes a long run of successful examples from a reason the pattern must always hold.'
+    ],
+    tryIt: 'Factor 60 into primes along two different paths. Do you reach the same prime factors?',
+    links: ['probability', 'testable-ideas', 'd20'],
+    sources: [{label: 'Eric W. Weisstein, MathWorld: Prime Number', url: 'https://mathworld.wolfram.com/PrimeNumber.html'}]
+  },
+  {
+    id: 'graphs', subject: 'Math', title: 'A journey through connections',
+    hook: 'Sometimes the connections matter more than the distances.',
+    body: [
+      'A graph represents objects as vertices and connections as edges. It can model bridges between riverbanks, trade between cities, or links between discoveries. An Eulerian trail uses every edge exactly once. The question concerns the structure of the connections, so changing the drawing’s shape need not change the answer.',
+      'For an undirected graph whose edge-bearing part is connected, an Eulerian trail exists when exactly zero or two vertices have odd degree. Degree counts the edges meeting at a vertex, with a loop counted twice. Entering and leaving usually uses paired edges; only the starting and finishing points can be exceptions.'
+    ],
+    tryIt: 'Draw a square with one diagonal. Count the odd-degree vertices and try tracing every edge once without lifting your pen.',
+    links: ['silk-roads', 'models', 'fellowship'],
+    sources: [{label: 'Eric W. Weisstein, MathWorld: Eulerian Path', url: 'https://mathworld.wolfram.com/EulerianPath.html'}]
+  },
+  {
+    id: 'probability', subject: 'Math', title: 'New information changes the odds',
+    hook: 'A probability question changes when you learn which possibilities remain.',
+    body: [
+      'Conditional probability asks for the chance of one event given that another has occurred. Imagine a fair six-sided die. Before any clue, rolling a six has probability one in six. If you learn that the result is even, the remaining equally likely possibilities are two, four, and six, so the chance becomes one in three.',
+      'The probability of A given B need not equal the probability of B given A. Confusing these directions can distort reasoning about evidence. Counting concrete possibilities is often a helpful first step. A clear statement of the conditions matters as much as the arithmetic, especially when observations are being used to update beliefs.'
+    ],
+    tryIt: 'On a fair die, what is the chance of an even result given that the result exceeds four? Count the remaining outcomes.',
+    links: ['d20', 'exoplanets', 'measurement'],
+    sources: [{label: 'Eric W. Weisstein, MathWorld: Conditional Probability', url: 'https://mathworld.wolfram.com/ConditionalProbability.html'}]
+  },
+  {
+    id: 'water', subject: 'Chemistry', title: 'The lopsided molecule behind life',
+    hook: 'Water is electrically neutral overall, yet its charge is distributed unevenly.',
+    body: [
+      'In a water molecule, oxygen and hydrogen share electrons unequally. Together with the bent molecular shape, this produces a polar molecule: one region is relatively negative and another relatively positive. Attractions between water molecules help explain why its collective behavior differs from what we might guess by inspecting a single molecule.',
+      'Water’s polarity also affects how it interacts with other substances. Thinking in terms of molecular attractions helps explain why some materials mix readily with water while others separate. The visible behavior in a glass is an outcome of vast numbers of microscopic interactions, linking everyday chemistry with the environments inside living cells.'
+    ],
+    tryIt: 'Sketch a bent water molecule and mark its relatively positive and negative regions. Predict how a neighboring molecule might orient.',
+    links: ['membranes', 'catalysts', 'mitochondria'],
+    sources: [{label: 'American Chemical Society: Water is a Polar Molecule', url: 'https://www.acs.org/middleschoolchemistry/lessonplans/chapter5/lesson1.html'}]
+  },
+  {
+    id: 'periodic-table', subject: 'Chemistry', title: 'A map built from proton counts',
+    hook: 'Change the number of protons and you change the identity of an element.',
+    body: [
+      'An element’s atomic number is its number of protons. The periodic table arranges elements by this number and reveals recurring patterns in their properties. Atoms of one element can have different numbers of neutrons; these forms are isotopes. Changing neutron count therefore differs fundamentally from changing the element itself.',
+      'A neutral atom has equal numbers of protons and electrons. Gaining or losing electrons forms an ion without changing the nucleus’s proton count. Keeping these three counts separate makes chemistry easier to navigate. It also helps distinguish ordinary chemical reactions, which rearrange electrons and bonds, from processes that transform atomic nuclei.'
+    ],
+    tryIt: 'An atom has six protons. Would adding one neutron or removing one electron turn it into a different element?',
+    links: ['starlight', 'stellar-fusion', 'primes'],
+    sources: [{label: 'American Chemical Society: The Periodic Table', url: 'https://www.acs.org/middleschoolchemistry/lessonplans/chapter4/lesson2.html'}]
+  },
+  {
+    id: 'catalysts', subject: 'Chemistry', title: 'A different route to a reaction',
+    hook: 'A catalyst can speed a reaction while being regenerated along the way.',
+    body: [
+      'A catalyst increases the rate of a reaction through an alternative reaction pathway and is regenerated overall. It can participate in intermediate steps without being consumed as a net reactant. This distinction explains how a relatively small amount can help transform a larger amount of starting material over time.',
+      'Biological catalysts, including many enzymes, make cellular chemistry possible at workable rates. The familiar shortcut analogy is useful: a route can become easier without changing the starting place or destination. Catalysis changes how rapidly a system approaches equilibrium rather than supplying unlimited energy or making every imaginable reaction possible.'
+    ],
+    tryIt: 'Draw two paths across the same hill, one high and one lower. Keep both endpoints fixed while comparing the barriers.',
+    links: ['ribosomes', 'mitochondria', 'models'],
+    sources: [{label: 'American Chemical Society: A Catalyst and the Rate of Reaction', url: 'https://www.acs.org/middleschoolchemistry/lessonplans/chapter6/lesson5.html'}]
+  },
+  {
+    id: 'elvish', subject: 'Tolkien lore', title: 'Languages that grew a world',
+    hook: 'Tolkien gave imagined languages histories as carefully shaped as the stories around them.',
+    body: [
+      'In Tolkien’s fictional Middle-earth, Quenya and Sindarin are distinct Elvish languages with imagined histories of change and descent. Tolkien developed his linguistic inventions over decades. Their sounds, relationships, and names helped shape the legendarium, so the languages are part of its creative foundation rather than decorative codes added afterward.',
+      'There are two histories to keep apart: the languages’ fictional development inside Middle-earth and Tolkien’s real revisions while creating them. A form in an early manuscript may not match a later conception. This makes the study of Elvish an encounter with both invented historical linguistics and the evolving work of an author.'
+    ],
+    tryIt: 'Invent a place-name, then change one sound systematically to imagine how a related culture might pronounce it centuries later.',
+    links: ['phonemes', 'language-change', 'rosetta'],
+    sources: [{label: 'Tolkien Estate: Carl Hostetter on Tolkien’s Invented Languages', url: 'https://www.tolkienestate.com/scholarship/carl-hostetter-tolkiens-invented-languages/'}]
+  },
+  {
+    id: 'fellowship', subject: 'Tolkien lore', title: 'The Ring’s dangerous promise',
+    hook: 'In Middle-earth, a tool of domination cannot be made safe by a good intention.',
+    body: [
+      'In The Lord of the Rings, the quest carries Sauron’s One Ring from the Shire toward Mordor so it can be destroyed. Frodo and Sam’s journey places apparently small figures within a much larger struggle. The Ring’s lure makes power itself a problem for the characters, including those who hope to do good.',
+      'Reading the quest as a network reveals how choices made far apart can depend on one another. Friendship, mercy, endurance, and cooperation matter alongside strength. These are literary themes to explore rather than scientific claims. The novel supports many interpretations, and distinguishing the written story from adaptations keeps discussions clearer.'
+    ],
+    tryIt: 'Map three decisions in the story that affect people far away. Which connections would a map of armies alone miss?',
+    links: ['graphs', 'models', 'dnd-dragons'],
+    sources: [{label: 'Tolkien Estate: The Lord of the Rings', url: 'https://www.tolkienestate.com/writing/the-lord-of-the-rings/'}]
+  },
+  {
+    id: 'hobbit-maps', subject: 'Tolkien lore', title: 'A world drawn into view',
+    hook: 'Tolkien’s drawings helped make imagined places feel like places one could travel.',
+    body: [
+      'Tolkien illustrated his invented world as well as describing it in words. Drawings and paintings accompanied The Hobbit, including views associated with Hobbiton and Rivendell. The Tolkien Estate notes that he sometimes drew scenes to clarify descriptions while writing. Visual creation and storytelling could therefore develop together during his work.',
+      'A fictional map invites readers to imagine the space between scenes: the route, the obstacles, and the homes left behind. It also selects what to show. Comparing a map with a character’s experience can reveal how distance becomes suspense, how landscapes carry memory, and how a familiar place anchors an unfamiliar world.'
+    ],
+    tryIt: 'Draw a tiny map from a comfortable home to a dangerous mountain. Add one location that changes the emotional journey.',
+    links: ['models', 'fellowship', 'graphs'],
+    sources: [{label: 'Tolkien Estate: Illustrating The Hobbit', url: 'https://www.tolkienestate.com/painting/the-hobbit/'}]
+  },
+  {
+    id: 'd20', subject: 'D&D lore', title: 'A twenty-sided engine of surprise',
+    hook: 'In Dungeons & Dragons, uncertainty gives a shared story room to turn.',
+    body: [
+      'Under the 2024 D&D rules, D20 Tests include ability checks, saving throws, and attack rolls. A player rolls a twenty-sided die, adds the relevant modifiers, and compares the total with a target number. The Dungeon Master and the rules determine when a test is needed. Many ordinary actions require no roll.',
+      'Advantage usually means rolling two d20s and using the higher result; disadvantage uses the lower. These rules change probabilities without making an outcome certain. Mechanics support the fiction by giving unexpected results a place in the story. Other editions and a table’s agreed house rules can handle details differently.'
+    ],
+    tryIt: 'For a fair d20 with no modifier, count the outcomes that meet DC 15. Then imagine taking the higher of two rolls.',
+    links: ['probability', 'primes', 'testable-ideas'],
+    sources: [{label: 'D&D Beyond: Playing the Game, 2024 rules', url: 'https://www.dndbeyond.com/sources/dnd/br-2024/playing-the-game'}]
+  },
+  {
+    id: 'dnd-magic', subject: 'D&D lore', title: 'Eight ways to organize magic',
+    hook: 'D&D’s schools of magic turn a vast imaginary possibility space into useful categories.',
+    body: [
+      'In the 2024 D&D rules, spells belong to eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, and Transmutation. These categories describe broad kinds of magical effects, while the individual spell supplies its actual rules. A school name by itself does not authorize a character to create any effect they can imagine.',
+      'The distinction between description and mechanics helps a group tell a consistent shared story. A spell’s range, casting time, components, and other limits matter to play. Fantasy magic follows invented rules rather than experimental chemistry. Settings, editions, and agreed house rules can differ, so a table benefits from a common reference.'
+    ],
+    tryIt: 'Invent a harmless spell that changes a hat’s color. Describe its limits before deciding which school fits best.',
+    links: ['models', 'catalysts', 'elvish'],
+    sources: [{label: 'D&D Beyond: Spells, 2024 rules', url: 'https://www.dndbeyond.com/sources/dnd/br-2024/spells'}]
+  },
+  {
+    id: 'dnd-dragons', subject: 'D&D lore', title: 'A dragon is more than a color',
+    hook: 'Familiar fantasy categories can start a story without deciding every character in it.',
+    body: [
+      'Dungeons & Dragons traditions distinguish dragon groups such as chromatic and metallic dragons. Published portrayals often associate those groups with particular tendencies, but an individual creature need not follow a stereotype. Official D&D discussion explicitly allows exceptions. A dragon can be an intelligent participant in a story, with goals beyond simply guarding treasure.',
+      'Lore varies across D&D settings, editions, and individual campaigns. Treat a familiar description as a starting point and ask which source or world a group is using. This makes room for mystery at the table while keeping expectations clear. A memorable encounter can turn on negotiation, conflicting goals, or surprising information.'
+    ],
+    tryIt: 'Create a dragon protecting something other than gold. Give it a motive that adventurers could discover through conversation.',
+    links: ['fellowship', 'd20', 'selection'],
+    sources: [{label: 'D&D Beyond: A Commoner’s Guide to Dragon Attacks', url: 'https://www.dndbeyond.com/posts/1041-the-commoners-guide-to-surviving-dragon-attacks'}]
+  }
+];
+
+const GAME_CSS = `
+.game-tabs {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin-bottom:1.5rem}
+.game-tabs .button {text-align:left;white-space:normal;min-height:4.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.2rem}
+.game-tabs .button[aria-pressed="true"] {outline:2px solid currentColor;outline-offset:3px}
+.game-tabs small {font-size:.75rem;font-weight:400}
+.game-panel {padding:clamp(1rem,3vw,2rem);border:1px solid var(--line,#bac6c6);border-radius:1.25rem;background:var(--paper,#fff)}
+.game-panel h3 {margin:0 0 .5rem}.game-panel h4 {font-size:1.2rem;line-height:1.5;margin:.65rem 0 1rem}
+.game-instructions {max-width:65ch;margin:.5rem 0 1.4rem}.game-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.game-option {display:block;text-align:left;white-space:normal;min-height:3.5rem;height:100%;padding:1rem;border:1px solid var(--line,#bac6c6);border-radius:.7rem;background:var(--paper,#fff);color:inherit;font:inherit;cursor:pointer}
+.game-option:hover:not(:disabled) {border-color:currentColor}.game-option[aria-pressed="true"] {outline:3px solid var(--accent,#126a62);outline-offset:1px}
+.game-option[data-result="correct"] {border-width:3px;border-color:var(--accent,#126a62)}
+.game-option:disabled {cursor:default;opacity:.7}.game-feedback {min-height:2em;margin:1.2rem 0 .8rem;font-weight:600;max-width:75ch}
+.game-meta {display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.85rem;margin-bottom:1rem}
+.game-actions {display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1rem}.match-columns {display:grid;grid-template-columns:1fr 1fr;gap:1rem}.match-stack {display:grid;gap:.6rem;align-content:start}
+.match-stack .game-option {min-height:5.5rem}.game-panel ol {padding-left:1.5rem}.timeline-list {display:grid;gap:.6rem}
+.timeline-list li {padding:.75rem;border:1px solid var(--line,#bac6c6);border-radius:.6rem}.timeline-row {display:flex;align-items:center;justify-content:space-between;gap:1rem}.timeline-moves {display:flex;gap:.3rem;flex-shrink:0}
+.timeline-moves button {padding:.4rem .65rem;min-height:2.5rem}.timeline-year {font-weight:700;display:block;margin-top:.3rem}.atom-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+.atom-tile {padding:1rem .5rem;text-align:center;border:1px solid var(--line,#bac6c6);border-radius:.7rem}.atom-tile strong {display:block;font-size:1.8rem}.atom-tile p {margin:.3rem 0 .7rem}.atom-tile .game-actions {justify-content:center;gap:.3rem;margin:0}.atom-tile button {padding:.4rem .7rem;min-height:2.5rem}
+.formula-display {font-size:1.4rem;font-weight:700;padding:1rem 0}.game-sources {font-size:.8rem;margin-top:1.5rem}.game-sources a {margin-right:.75rem}.game-panel fieldset {padding:0;border:0;margin:0}.game-panel legend {font-weight:700;font-size:1.2rem;padding:0;margin-bottom:1rem}
+@media(max-width:680px){.game-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.atom-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-grid{grid-template-columns:1fr}.match-columns{gap:.5rem}.match-stack .game-option{padding:.65rem;font-size:.9rem}.timeline-row{flex-wrap:wrap}}
+`;
+
+function mountGames(container) {
+  const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const shuffle = array => {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; }
+    return copy;
+  };
+  const games = [
+    {name:'Curiosity quiz', detail:'Follow the clues', play:quiz},
+    {name:'Connection match', detail:'Find four pairs', play:match},
+    {name:'Time traveler', detail:'Put discoveries in order', play:timeline},
+    {name:'Element lab', detail:'Decode four formulas', play:lab}
+  ];
+  container.innerHTML = '<div class="game-tabs" role="group" aria-label="Choose a game"></div><div class="game-panel"></div>';
+  const tabs = container.querySelector('.game-tabs');
+  const panel = container.querySelector('.game-panel');
+  games.forEach((game, index) => {
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'button secondary';
+    button.innerHTML = `<span>${escape(game.name)}</span><small>${escape(game.detail)}</small>`;
+    button.setAttribute('aria-pressed', String(index === 0));
+    button.addEventListener('click', () => select(index, true));
+    tabs.append(button);
+  });
+  function select(index, focus) {
+    [...tabs.children].forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+    panel.innerHTML = `<h3 tabindex="-1">${escape(games[index].name)}</h3><div class="game-content"></div><p class="game-feedback" role="status" aria-live="polite" aria-atomic="true"></p>`;
+    games[index].play(panel.querySelector('.game-content'), panel.querySelector('.game-feedback'));
+    if (focus) panel.querySelector('h3').focus();
+  }
+  function action(label, onClick, extraClass = '') {
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = `button ${extraClass}`.trim(); button.textContent = label;
+    button.addEventListener('click', onClick); return button;
+  }
+  function quiz(host, status) {
+    const pool = shuffle(KNOWLEDGE).slice(0, 5);
+    const subjects = [...new Set(KNOWLEDGE.map(entry => entry.subject))];
+    let index = 0, score = 0;
+    host.innerHTML = '<p class="game-instructions">Read a discovery, then choose its subject. Five questions, no clock. Each answer opens a little more of the story.</p><div class="quiz-question"></div><div class="game-actions quiz-actions"></div>';
+    const question = host.querySelector('.quiz-question');
+    const actions = host.querySelector('.quiz-actions');
+    function render(focus) {
+      status.textContent = ''; actions.replaceChildren();
+      const entry = pool[index];
+      const choices = shuffle([entry.subject, ...shuffle(subjects.filter(subject => subject !== entry.subject)).slice(0, 3)]);
+      question.innerHTML = `<div class="game-meta"><span>Question ${index + 1} of ${pool.length}</span><span>Score: ${score}</span></div><p class="eyebrow">${escape(entry.title)}</p><p>${escape(entry.hook)}</p><fieldset><legend tabindex="-1">Which subject does this discovery belong to?</legend><div class="game-grid">${choices.map(choice => `<button class="game-option" type="button">${escape(choice)}</button>`).join('')}</div></fieldset>`;
+      question.querySelectorAll('.game-option').forEach((button, choiceIndex) => button.addEventListener('click', () => {
+        const correct = choices[choiceIndex] === entry.subject;
+        if (correct) score++;
+        question.querySelectorAll('.game-option').forEach((option, optionIndex) => {
+          option.disabled = true;
+          if (choices[optionIndex] === entry.subject) { option.dataset.result = 'correct'; option.textContent += ' — correct'; }
+        });
+        const explanation = Array.isArray(entry.body) ? entry.body[0] : entry.hook;
+        status.textContent = `${correct ? 'Correct!' : `The answer is ${entry.subject}.`} ${explanation}`;
+        const next = action(index < pool.length - 1 ? 'Next question →' : 'See my result', () => {
+          index++;
+          if (index < pool.length) render(true);
+          else {
+            question.innerHTML = `<h4 tabindex="-1">Round complete: ${score} of ${pool.length}</h4><p>Every answer is a new doorway. Return to Explore to follow the discoveries that caught your attention.</p>`;
+            actions.replaceChildren(action('Play another round', () => { quiz(host, status); host.querySelector('legend').focus(); }));
+            status.textContent = `Round complete. You scored ${score} out of ${pool.length}.`;
+            question.querySelector('h4').focus();
+          }
+        });
+        actions.append(next); next.focus();
+      }));
+      if (focus) question.querySelector('legend').focus();
+    }
+    render(false);
+  }
+  function match(host, status) {
+    const selectedEntries = [];
+    for (const entry of shuffle(KNOWLEDGE)) {
+      if (!selectedEntries.some(other => other.subject === entry.subject)) selectedEntries.push(entry);
+      if (selectedEntries.length === 4) break;
+    }
+    let left = null, right = null, pairs = 0, attempts = 0;
+    const solved = new Set();
+    host.innerHTML = '<p class="game-instructions">Choose a title on the left and its matching clue on the right, in either order. Find all four pairs. Use Tab and Enter or Space; dragging is never needed.</p><div class="game-meta"><span class="match-score">0 of 4 pairs</span><span class="match-attempts">0 attempts</span></div><div class="match-columns"><div><p class="eyebrow">Discoveries</p><div class="match-stack match-left"></div></div><div><p class="eyebrow">Clues</p><div class="match-stack match-right"></div></div></div><div class="game-actions match-actions"></div>';
+    const buttons = [];
+    function update() {
+      buttons.forEach(({button, entry, side}) => {
+        button.setAttribute('aria-pressed', String(side === 'left' ? left === entry.id : right === entry.id));
+        if (solved.has(entry.id)) { button.disabled = true; button.dataset.result = 'correct'; }
+      });
+    }
+    function choose(entry, side) {
+      if (side === 'left') left = left === entry.id ? null : entry.id;
+      else right = right === entry.id ? null : entry.id;
+      update();
+      if (left === null || right === null) { status.textContent = 'Now choose a card from the other column.'; return; }
+      attempts++;
+      if (left === right) {
+        solved.add(left); pairs++;
+        status.textContent = `Matched: ${entry.title}. ${pairs} of 4 pairs found.`;
+      } else status.textContent = 'Those cards describe different discoveries. Try another pair.';
+      left = null; right = null; update();
+      host.querySelector('.match-score').textContent = `${pairs} of 4 pairs`;
+      host.querySelector('.match-attempts').textContent = `${attempts} ${attempts === 1 ? 'attempt' : 'attempts'}`;
+      if (pairs === 4) {
+        status.textContent = `All four connected! You found every pair in ${attempts} attempts.`;
+        const replay = action('Deal another set', () => { status.textContent = ''; match(host, status); host.querySelector('.game-option').focus(); });
+        host.querySelector('.match-actions').append(replay); replay.focus();
+      } else if (solved.has(entry.id)) {
+        buttons.find(item => item.side === 'left' && !solved.has(item.entry.id)).button.focus();
+      }
+    }
+    for (const side of ['left', 'right']) for (const entry of side === 'left' ? selectedEntries : shuffle(selectedEntries)) {
+      const button = action(side === 'left' ? entry.title : entry.hook, () => choose(entry, side));
+      button.className = 'game-option'; button.setAttribute('aria-pressed', 'false');
+      host.querySelector(`.match-${side}`).append(button); buttons.push({button, entry, side});
+    }
+  }
+  function timeline(host, status) {
+    const events = [
+      {id:'newton',year:1687,title:'Newton publishes the first edition of Principia',source:'https://www.loc.gov/item/2021667054/',label:'Library of Congress'},
+      {id:'darwin',year:1859,title:'Darwin publishes On the Origin of Species',source:'https://darwin-online.org.uk/DarwinCensus.html',label:'Darwin Online'},
+      {id:'table',year:1869,title:'Mendeleev presents his periodic system',source:'https://periodic-table.rsc.org/history/about',label:'Royal Society of Chemistry'},
+      {id:'dna',year:1953,title:'The DNA double-helix model is published',source:'https://www.nobelprize.org/stories/cells-nerves-genes/',label:'Nobel Prize'},
+      {id:'apollo',year:1969,title:'Apollo 11 lands humans on the Moon',source:'https://www.nasa.gov/mission/apollo-11/',label:'NASA'}
+    ];
+    let order = shuffle(events), moves = 0, revealed = false;
+    if (order.every((event, index) => event === events[index])) [order[0], order[1]] = [order[1], order[0]];
+    host.innerHTML = '<p class="game-instructions">Arrange five milestones from earliest at the top to latest at the bottom. Use the Up and Down buttons. Check your order whenever you like; checking also reveals the years.</p><p class="muted timeline-count">0 moves</p><ol class="timeline-list"></ol><div class="game-actions timeline-actions"></div><p class="game-sources">Date sources: '+events.map(event => `<a href="${escape(event.source)}" target="_blank" rel="noopener noreferrer">${escape(event.label)} ↗</a>`).join(' ')+'</p>';
+    const list = host.querySelector('.timeline-list');
+    function render(focusId, direction) {
+      list.innerHTML = order.map((event, index) => `<li><div class="timeline-row"><span>${escape(event.title)}${revealed ? `<span class="timeline-year">${event.year}</span>` : ''}</span><div class="timeline-moves"><button class="button secondary" type="button" data-id="${event.id}" data-direction="up" aria-label="Move ${escape(event.title)} up" ${index === 0 ? 'disabled' : ''}>↑ <span>Up</span></button><button class="button secondary" type="button" data-id="${event.id}" data-direction="down" aria-label="Move ${escape(event.title)} down" ${index === order.length - 1 ? 'disabled' : ''}>↓ <span>Down</span></button></div></div></li>`).join('');
+      list.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
+        const oldIndex = order.findIndex(event => event.id === button.dataset.id);
+        const newIndex = oldIndex + (button.dataset.direction === 'up' ? -1 : 1);
+        if (newIndex < 0 || newIndex >= order.length) return;
+        const event = order[oldIndex];
+        [order[oldIndex], order[newIndex]] = [order[newIndex], order[oldIndex]];
+        moves++; host.querySelector('.timeline-count').textContent = `${moves} ${moves === 1 ? 'move' : 'moves'}`;
+        render(event.id, button.dataset.direction);
+        status.textContent = `Moved ${event.title} to position ${newIndex + 1} of 5.`;
+      }));
+      if (focusId) {
+        const preferred = list.querySelector(`[data-id="${focusId}"][data-direction="${direction}"]`);
+        (preferred.disabled ? list.querySelector(`[data-id="${focusId}"]:not(:disabled)`) : preferred).focus();
+      }
+    }
+    const actions = host.querySelector('.timeline-actions');
+    actions.append(action('Check & reveal years', () => {
+      const correct = order.every((event, index) => event.id === events[index].id);
+      revealed = true; render();
+      status.textContent = correct ? `Chronology complete! All five milestones are in order. You used ${moves} moves.` : 'A few milestones are out of order. The years are now visible to help you rearrange them.';
+    }), action('Shuffle & restart', () => { status.textContent = ''; timeline(host, status); host.querySelector('.timeline-list button:not(:disabled)').focus(); }, 'secondary'));
+    render();
+  }
+  function lab(host, status) {
+    const targets = [
+      {name:'Water',formula:'H₂O',counts:{H:2,C:0,N:0,O:1},note:'The formula counts two hydrogen atoms and one oxygen atom in each water molecule.'},
+      {name:'Carbon dioxide',formula:'CO₂',counts:{H:0,C:1,N:0,O:2},note:'One carbon atom and two oxygen atoms make the formula of carbon dioxide.'},
+      {name:'Ammonia',formula:'NH₃',counts:{H:3,C:0,N:1,O:0},note:'One nitrogen and three hydrogen atoms give ammonia its molecular formula.'},
+      {name:'Methane',formula:'CH₄',counts:{H:4,C:1,N:0,O:0},note:'Methane contains one carbon atom and four hydrogen atoms per molecule.'}
+    ];
+    const elements = [{symbol:'H',name:'Hydrogen'},{symbol:'C',name:'Carbon'},{symbol:'N',name:'Nitrogen'},{symbol:'O',name:'Oxygen'}];
+    let targetIndex = 0, counts = {H:0,C:0,N:0,O:0}, completed = false;
+    host.innerHTML = '<p class="game-instructions">Decode each formula by adding the right number of atoms. A small subscript tells you how many; no subscript means one. This is an atom-count puzzle, not a guide to chemical reactions.</p><div class="lab-round"></div><div class="atom-grid"></div><p class="formula-display" aria-label="Your atom counts"></p><div class="game-actions lab-actions"></div>';
+    const round = host.querySelector('.lab-round');
+    const grid = host.querySelector('.atom-grid');
+    const actions = host.querySelector('.lab-actions');
+    const check = action('Check my atoms', () => {
+      const target = targets[targetIndex];
+      if (elements.every(element => counts[element.symbol] === target.counts[element.symbol])) {
+        completed = true; status.textContent = `Correct! ${target.note}`; sync();
+        const next = action(targetIndex < targets.length - 1 ? 'Next molecule →' : 'Finish lab', () => {
+          if (targetIndex < targets.length - 1) { targetIndex++; resetRound(true); }
+          else {
+            round.innerHTML = '<h4 tabindex="-1">Lab complete: four formulas decoded</h4><p>You can now read atom counts in H₂O, CO₂, NH₃, and CH₄.</p>';
+            grid.replaceChildren(); host.querySelector('.formula-display').textContent = '';
+            actions.replaceChildren(action('Play the lab again', () => { status.textContent = ''; lab(host, status); host.querySelector('h4').focus(); }));
+            status.textContent = 'Lab complete. All four formulas decoded.'; round.querySelector('h4').focus();
+          }
+        });
+        actions.append(next); next.focus();
+      } else status.textContent = 'Not quite. Compare every element with the target formula, including any extra atoms you added.';
+    });
+    const clear = action('Clear atoms', () => { counts = {H:0,C:0,N:0,O:0}; sync(); status.textContent = 'All atom counts cleared.'; }, 'secondary');
+    function sync() {
+      elements.forEach(element => {
+        const tile = grid.querySelector(`[data-element="${element.symbol}"]`);
+        tile.querySelector('.atom-count').textContent = `${counts[element.symbol]} ${counts[element.symbol] === 1 ? 'atom' : 'atoms'}`;
+        tile.querySelector('[data-change="1"]').disabled = completed || counts[element.symbol] >= 12;
+        tile.querySelector('[data-change="-1"]').disabled = completed || counts[element.symbol] === 0;
+      });
+      host.querySelector('.formula-display').textContent = 'Your atoms: '+elements.map(element => `${element.symbol}: ${counts[element.symbol]}`).join(' · ');
+      check.disabled = completed; clear.disabled = completed;
+    }
+    function resetRound(focus) {
+      completed = false; counts = {H:0,C:0,N:0,O:0}; status.textContent = '';
+      const target = targets[targetIndex];
+      round.innerHTML = `<p class="eyebrow">Molecule ${targetIndex + 1} of ${targets.length}</p><h4 tabindex="-1">${escape(target.name)}: ${escape(target.formula)}</h4>`;
+      grid.innerHTML = elements.map(element => `<div class="atom-tile" data-element="${element.symbol}"><strong>${element.symbol}</strong><span>${element.name}</span><p class="atom-count">0 atoms</p><div class="game-actions"><button class="button secondary" type="button" data-change="-1" aria-label="Remove one ${element.name.toLowerCase()} atom">−</button><button class="button secondary" type="button" data-change="1" aria-label="Add one ${element.name.toLowerCase()} atom">+</button></div></div>`).join('');
+      grid.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
+        const symbol = button.closest('[data-element]').dataset.element;
+        counts[symbol] = Math.max(0, Math.min(12, counts[symbol] + Number(button.dataset.change))); sync();
+        status.textContent = `${symbol}: ${counts[symbol]} ${counts[symbol] === 1 ? 'atom' : 'atoms'}.`;
+        if (button.disabled) button.closest('.atom-tile').querySelector('button:not(:disabled)').focus();
+      }));
+      actions.replaceChildren(check, clear); sync();
+      if (focus) round.querySelector('h4').focus();
+    }
+    resetRound(false);
+  }
+  select(0, false);
+}
+
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const byId = new Map(KNOWLEDGE.map(entry => [entry.id, entry]));
+const subjects = [...new Set(KNOWLEDGE.map(entry => entry.subject))];
+const STORE_KEY = 'wonderbrain-v3.1';
+let storageAvailable = true;
+const defaults = {saved:[], read:[], settings:{theme:'system', text:'standard', contrast:false, spacing:false, motion:false}};
+let state;
+try {
+  const raw = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
+  state = {saved:[...new Set((Array.isArray(raw?.saved) ? raw.saved : []).filter(id => byId.has(id)))], read:[...new Set((Array.isArray(raw?.read) ? raw.read : []).filter(id => byId.has(id)))], settings:{...defaults.settings}};
+  const settings = raw?.settings;
+  if (settings && typeof settings === 'object') {
+    if (['system','light','dark'].includes(settings.theme)) state.settings.theme = settings.theme;
+    if (['standard','large','xlarge'].includes(settings.text)) state.settings.text = settings.text;
+    for (const key of ['contrast','spacing','motion']) state.settings[key] = settings[key] === true;
+  }
+} catch { state = structuredClone(defaults); storageAvailable = false; }
+let currentView = 'explore';
+let currentSubject = 'All subjects';
+let trail = [];
+let activeEntry = null;
+let dialogOpener = null;
+let announceTimer;
+const articleDialog = $('#article-dialog');
+const settingsDialog = $('#settings-dialog');
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+const bookmarkIcon = '<svg width="15" height="18" viewBox="0 0 18 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 2h12v18l-6-4-6 4z"/></svg>';
+const art = [
+  '<circle cx="50" cy="50" r="28"/><ellipse cx="50" cy="50" rx="43" ry="15" transform="rotate(-35 50 50)"/><circle cx="77" cy="25" r="4" fill="currentColor"/><path d="m16 20 7 0m-3-3v6"/>',
+  '<path d="M27 13c55 19-9 55 46 74M73 13C18 32 82 68 27 87M31 20h38M34 35h32M34 65h32M31 80h38M40 50h20"/><circle cx="50" cy="50" r="43" stroke-dasharray="2 7"/>',
+  '<path d="M15 27h29c4 0 6 3 6 7v47c0-4-3-7-7-7H15zm70 0H56c-4 0-6 3-6 7v47c0-4 3-7 7-7h28zM24 39h14m-14 9h14m-14 9h14m24-18h14m-14 9h14m-14 9h14M50 12v6m-15-2 4 5m26-5-4 5"/>',
+  '<path d="m50 9 38 23v42L50 94 12 74V32zM12 32l38 21 38-21M50 53v41M50 9v44M12 74l38-21 38 21"/><circle cx="50" cy="53" r="10" fill="var(--card-color)"/>',
+  '<path d="M13 55c8-40 15 40 24 0s16 40 25 0 16 40 25 0M12 77h76M21 83v-6m19 6v-6m20 6v-6m20 6v-6"/><circle cx="50" cy="31" r="22" stroke-dasharray="3 6"/>'
+];
+function announce(message) { clearTimeout(announceTimer); $('#announcer').textContent = ''; announceTimer = setTimeout(() => $('#announcer').textContent = message, 60); }
+function persist() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+  catch { storageAvailable = false; }
+  $('#storage-status').textContent = storageAvailable ? 'Your collection and settings stay in this browser. No account needed.' : 'Browser storage is unavailable. Your collection works for this visit; it may not be kept after you leave.';
+}
+function applySettings() {
+  const s = state.settings, root = document.documentElement;
+  root.dataset.theme = s.theme === 'system' ? (systemTheme.matches ? 'dark' : 'light') : s.theme;
+  root.dataset.text = s.text;
+  root.dataset.contrast = String(s.contrast);
+  root.dataset.spacing = String(s.spacing);
+  root.dataset.motion = s.motion ? 'reduce' : 'auto';
+  $('#theme').value = s.theme; $('#text-size').value = s.text;
+  for (const key of ['contrast','spacing','motion']) $('#' + key).checked = s[key];
+}
+systemTheme.addEventListener('change', applySettings);
+function updateStats() {
+  $('#saved-count').textContent = String(state.saved.length);
+  $('#progress-label').textContent = `${state.read.length} of ${KNOWLEDGE.length} discoveries explored`;
+  $('#stat-saved').textContent = String(state.saved.length);
+  $('#stat-read').textContent = String(state.read.length);
+  $('#stat-subjects').textContent = String(new Set(state.read.map(id => byId.get(id).subject)).size);
+}
+function card(entry) {
+  const index = subjects.indexOf(entry.subject);
+  const color = ['var(--green)','var(--purple)','var(--yellow)','var(--blue)'][index % 4];
+  const saved = state.saved.includes(entry.id), read = state.read.includes(entry.id);
+  const minutes = Math.max(1, Math.ceil((entry.body.join(' ').split(/\s+/).length + entry.hook.split(/\s+/).length) / 180));
+  const symbol = art[[0,2,2,0,4,1,4,1,1,3,0,2,3][index] ?? 0];
+  return `<article class="discovery-card"><div class="card-art" style="--card-color:${color}"><div class="art-grid"></div><span class="card-tag">${escapeHTML(entry.subject)}</span><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">${symbol}</svg><button type="button" class="save-button" data-save="${entry.id}" aria-pressed="${saved}" aria-label="${saved ? 'Unsave' : 'Save'} ${escapeHTML(entry.title)}">${bookmarkIcon}</button></div><div class="card-content"><div class="card-meta"><span>${escapeHTML(entry.subject)}</span><span class="${read ? 'read-mark' : ''}">${read ? '✓ Explored' : minutes + ' min read'}</span></div><h3><a href="#topic=${entry.id}">${escapeHTML(entry.title)}</a></h3><p>${escapeHTML(entry.hook)}</p><div class="card-bottom"><span>3 rabbit holes to follow</span><a href="#topic=${entry.id}" aria-label="Explore ${escapeHTML(entry.title)}">Explore <span aria-hidden="true">↗</span></a></div></div></article>`;
+}
+function renderFilters() {
+  $('#filters').innerHTML = ['All subjects',...subjects].map(subject => `<button type="button" class="filter" data-subject="${escapeHTML(subject)}" aria-pressed="${currentSubject === subject}">${escapeHTML(subject)}</button>`).join('');
+}
+function normalize(value) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+function renderCards() {
+  const query = normalize($('#search').value.trim());
+  const entries = KNOWLEDGE.filter(entry => (currentSubject === 'All subjects' || entry.subject === currentSubject) && (!query || normalize([entry.title, entry.subject, entry.hook, ...entry.body].join(' ')).includes(query)));
+  $('#result-count').textContent = `${entries.length} ${entries.length === 1 ? 'discovery' : 'discoveries'}${currentSubject !== 'All subjects' ? ' in ' + currentSubject : ' across 13 subjects'}`;
+  $('#clear-filters').hidden = !query && currentSubject === 'All subjects';
+  $('#discovery-cards').innerHTML = entries.length ? entries.map(card).join('') : '<div class="empty"><h3>No discoveries just yet.</h3><p class="muted">Try a broader search or explore another subject.</p><button type="button" class="button secondary" data-clear>Show all discoveries</button></div>';
+  $('#collection-cards').innerHTML = state.saved.length ? state.saved.map(id => card(byId.get(id))).join('') : '<div class="empty"><h3>Your next favorite idea is out there.</h3><p class="muted">Bookmark a discovery to keep it here.</p><button type="button" class="button" data-browse>Explore the library <span aria-hidden="true">↗</span></button></div>';
+  updateStats();
+}
+function clearFilters() { $('#search').value = ''; currentSubject = 'All subjects'; renderFilters(); renderCards(); }
+function switchView(view, focus = true) {
+  if (!['explore','games','collection'].includes(view)) view = 'explore';
+  currentView = view;
+  for (const name of ['explore','games','collection']) $('#' + name + '-view').hidden = name !== view;
+  for (const button of $$('[data-view]')) { if (button.dataset.view === view) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current'); }
+  if (view === 'games') mountGames($('#games-root'));
+  if (view === 'collection') renderCards();
+  if (focus) { const heading = view === 'explore' ? $('#hero-title') : $('#' + (view === 'games' ? 'games' : 'collection') + '-title'); heading.tabIndex = -1; heading.focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
+}
+function toggleSave(id) {
+  if (!byId.has(id)) return;
+  const saved = state.saved.includes(id);
+  state.saved = saved ? state.saved.filter(value => value !== id) : [...state.saved,id];
+  persist();
+  // Update buttons in place so keyboard users keep their position.
+  for (const button of $$('[data-save]')) if (button.dataset.save === id) {
+    button.setAttribute('aria-pressed', String(!saved));
+    button.setAttribute('aria-label', `${saved ? 'Save' : 'Unsave'} ${byId.get(id).title}`);
+    if (button.classList.contains('article-save')) button.innerHTML = bookmarkIcon + (saved ? 'Save discovery' : 'Saved to collection');
+  }
+  updateStats();
+  if (currentView === 'collection') {
+    const focused = document.activeElement?.dataset.save === id;
+    renderCards();
+    if (focused && !articleDialog.open) { const target = $('[data-save]', $('#collection-cards')) || $('[data-browse]'); target?.focus(); }
+  }
+  announce(saved ? 'Discovery removed from your collection.' : 'Discovery saved to your collection.');
+}
+function articleMarkup(entry) {
+  const saved = state.saved.includes(entry.id);
+  const crumbs = trail.slice(-5);
+  return `<div class="trail" aria-label="Your rabbit hole trail">${crumbs.length > 1 ? 'Your trail: ' + crumbs.map((id,index) => index === crumbs.length - 1 ? escapeHTML(byId.get(id).title) : `<button type="button" data-trail="${id}">${escapeHTML(byId.get(id).title)}</button>`).join(' <span aria-hidden="true">→</span> ') : 'A new rabbit hole begins here.'}</div><p class="eyebrow" style="margin-top:22px">${escapeHTML(entry.subject)}${entry.subject.includes('lore') ? ' · Fictional worlds' : ''}</p><h2 id="article-title" tabindex="-1">${escapeHTML(entry.title)}</h2><p class="article-hook">${escapeHTML(entry.hook)}</p><div class="article-copy">${entry.body.map(p => `<p>${escapeHTML(p)}</p>`).join('')}</div><div class="article-tools"><button type="button" class="button secondary article-save" data-save="${entry.id}" aria-pressed="${saved}" aria-label="${saved ? 'Unsave' : 'Save'} ${escapeHTML(entry.title)}">${bookmarkIcon}${saved ? 'Saved to collection' : 'Save discovery'}</button></div><aside class="thought"><h3>Pause & wonder</h3><p>${escapeHTML(entry.tryIt)}</p></aside><section class="rabbit-section" aria-labelledby="rabbit-title"><h3 id="rabbit-title">Follow a thread.</h3><p>An idea is only the beginning. See where it leads.</p><div class="rabbit-links">${entry.links.map(id => {const related = byId.get(id); return `<a class="rabbit-link" href="#topic=${id}"><span><small>${escapeHTML(related.subject)}</small><strong>${escapeHTML(related.title)}</strong></span><span aria-hidden="true">↗</span></a>`;}).join('')}</div></section><div class="sources"><strong>Go a little deeper</strong><ul>${entry.sources.map(source => `<li><a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.label)} <span class="sr-only">(opens in a new tab)</span><span aria-hidden="true">↗</span></a></li>`).join('')}</ul><p>WonderBrain summaries are original introductions. Follow the sources for context and detail.</p></div>`;
+}
+function openArticle(id) {
+  const entry = byId.get(id); if (!entry) { announce('That discovery could not be found.'); return; }
+  if (!articleDialog.open) { dialogOpener = document.activeElement; trail = []; }
+  if (trail[trail.length-1] !== id) trail.push(id);
+  activeEntry = id;
+  if (!state.read.includes(id)) { state.read.push(id); persist(); }
+  $('#article-content').innerHTML = articleMarkup(entry);
+  if (!articleDialog.open) articleDialog.showModal();
+  articleDialog.scrollTop = 0;
+  $('#article-title').focus({preventScroll:true});
+  document.title = `${entry.title} · WonderBrain`;
+  updateStats();
+}
+function handleHash() {
+  const hash = location.hash;
+  if (hash.startsWith('#topic=')) {
+    let id; try { id = decodeURIComponent(hash.slice(7)); } catch { return; }
+    if (byId.has(id)) openArticle(id);
+    else { if (articleDialog.open) articleDialog.close(); announce('That discovery could not be found. Explore the library to find another.'); }
+  } else {
+    if (articleDialog.open) articleDialog.close();
+    if (hash === '#games') switchView('games');
+    else if (hash === '#collection') switchView('collection');
+    else if (hash === '' || hash === '#') switchView('explore',false);
+    else if (hash === '#discoveries') { switchView('explore',false); $('#discoveries').scrollIntoView(); }
+  }
+}
+function closeArticle() {
+  if (articleDialog.open) articleDialog.close();
+  if (location.hash.startsWith('#topic=')) history.replaceState(null,'', location.pathname + location.search + (currentView === 'explore' ? '' : '#' + currentView));
+}
+articleDialog.addEventListener('close', () => {
+  if (location.hash.startsWith('#topic=')) history.replaceState(null,'',location.pathname + location.search + (currentView === 'explore' ? '' : '#' + currentView));
+  activeEntry = null; document.title = 'WonderBrain · A little more curious';
+  const opener = dialogOpener;
+  const openerHref = opener?.getAttribute('href');
+  renderCards();
+  if (opener?.isConnected) opener.focus({preventScroll:true});
+  else if (openerHref?.startsWith('#topic=')) {
+    const links = $$('a[href]', $('#' + currentView + '-view'));
+    (links.find(link => link.getAttribute('href') === openerHref) || $('#main')).focus({preventScroll:true});
+  }
+  else if (opener?.dataset?.save) $(`[data-save="${opener.dataset.save}"]`)?.focus({preventScroll:true});
+  else $('#main').focus({preventScroll:true});
+});
+$('#article-close').addEventListener('click',closeArticle);
+$('#settings-open').addEventListener('click',() => settingsDialog.showModal());
+$('#settings-close').addEventListener('click',() => settingsDialog.close());
+for (const dialog of [articleDialog,settingsDialog]) dialog.addEventListener('click',event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+$('#settings-dialog').addEventListener('change',() => { state.settings = {theme:$('#theme').value,text:$('#text-size').value,contrast:$('#contrast').checked,spacing:$('#spacing').checked,motion:$('#motion').checked}; applySettings(); persist(); });
+$('#search').addEventListener('input',renderCards);
+$('#clear-filters').addEventListener('click',clearFilters);
+$('#surprise').addEventListener('click',() => { const unread = KNOWLEDGE.filter(entry => !state.read.includes(entry.id)); const pool = unread.length ? unread : KNOWLEDGE; const entry = pool[Math.floor(Math.random()*pool.length)]; if (location.hash === '#topic=' + entry.id) openArticle(entry.id); else location.hash = 'topic=' + entry.id; });
+document.addEventListener('click',event => {
+  const save = event.target.closest('[data-save]'); if (save) { toggleSave(save.dataset.save); return; }
+  const filter = event.target.closest('[data-subject]'); if (filter) { currentSubject = filter.dataset.subject; for (const b of $$('[data-subject]')) b.setAttribute('aria-pressed',String(b === filter)); renderCards(); return; }
+  const nav = event.target.closest('[data-view]'); if (nav) { const view = nav.dataset.view; const hash = view === 'explore' ? '' : '#' + view; if (location.hash === hash) switchView(view); else { history.pushState(null,'',location.pathname + location.search + hash); switchView(view); } return; }
+  if (event.target.closest('[data-clear]')) { clearFilters(); $('#search').focus(); }
+  if (event.target.closest('[data-browse]')) { history.pushState(null,'',location.pathname + location.search); switchView('explore'); }
+  const crumb = event.target.closest('[data-trail]'); if (crumb) { const index = trail.lastIndexOf(crumb.dataset.trail); trail = trail.slice(0,index); location.hash = 'topic=' + crumb.dataset.trail; }
+});
+window.addEventListener('hashchange',handleHash);
+window.addEventListener('popstate',() => { if (!location.hash.startsWith('#topic=')) handleHash(); });
+applySettings(); persist(); renderFilters(); renderCards(); handleHash();
+
+</script>
+</body>
+</html>
