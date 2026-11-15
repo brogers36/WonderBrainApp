@@ -30,7 +30,7 @@ The final installation type depends on the phone and browser. Chrome on devices 
 
 **Offline:** After the installation-help dialog says **Ready for offline exploring**, the library and all four games can open without an internet connection. External sources require internet. The app saves its small set of local files in this browser's cache. Browsers can reclaim cached files; reconnect and open the app to restore them. Saved discoveries and settings remain in local storage and are separate from the offline cache. Storage is specific to a browser or installed-app context, so a new context may begin with an empty collection.
 
-**Updates:** Open WonderBrain while online to receive newer content. The service worker checks the network for the current HTML and falls back to the saved copy if offline. A newer worker activates without forcing a page reload. Reopen or reload to show the newest content. If you change the precached asset set, increment the service-worker cache version.
+**Updates:** Requested changes made in this chat are tested and published to `main`; GitHub Pages deploys that branch automatically. Installed copies check for current content when opened online. They also check for newer offline files when the app resumes, the connection returns, and periodically while the app is visible. A complete newer offline copy activates without interrupting a game or an open discovery. Reopen or reload to display the newest content; no reinstall is needed for app-content updates. Offline devices keep the last complete saved copy. Hosting propagation and browser scheduling can affect when an update arrives.
 
 The application manifest, `sw.js`, and `icons/` are needed for hosted installation/offline support. Keep them next to `index.html` when publishing. Relative URLs keep the app confined to the repository's own GitHub Pages path; it does not control other projects on the same account.
 
@@ -59,3 +59,5 @@ Version 3.1 was rebuilt as a self-contained app because the earlier chat's downl
 ## Editing
 
 The HTML includes its own styles and scripts. `KNOWLEDGE` holds the discovery entries. Each entry has an ID, subject, title, hook, explanatory paragraphs, activity, three related discovery IDs, and source links. Preserve IDs to keep existing bookmarks and shared discovery links working. Test search, article links, all four games, saved progress, display settings, and a narrow phone layout after changing the file.
+
+After editing hosted app files, run `node scripts/prepare-release.cjs` from the repository root and commit the generated `sw.js` with the changed files. The script derives the offline-cache revision from the actual app content, including its icons and service-worker code, so a release does not depend on someone remembering to change a version number. The same inputs produce the same revision. See `AGENTS.md` for the standing publishing preference and verification requirements.

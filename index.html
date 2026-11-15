@@ -988,9 +988,30 @@ standaloneMode.addEventListener('change', () => {
 });
 syncInstallControls();
 function offlineStatus(message) { $('#offline-state').textContent = message; }
+let appRegistration = null;
+let lastUpdateCheck = 0;
+let updateCheckInFlight = false;
+const UPDATE_THROTTLE_MS = 60 * 1000;
+// Resume checks help installed apps that keep their window open for days.
+// Activation refreshes the offline copy; the next launch loads the new page.
+async function checkForAppUpdate(force = false) {
+  if (!appRegistration || document.visibilityState !== 'visible' || navigator.onLine === false || updateCheckInFlight) return;
+  if (!force && Date.now() - lastUpdateCheck < UPDATE_THROTTLE_MS) return;
+  lastUpdateCheck = Date.now();
+  updateCheckInFlight = true;
+  try { await appRegistration.update(); }
+  catch { /* The existing complete offline copy remains available. */ }
+  finally { updateCheckInFlight = false; }
+}
+window.addEventListener('online', () => checkForAppUpdate(true));
+window.addEventListener('focus', () => checkForAppUpdate());
+document.addEventListener('visibilitychange', () => checkForAppUpdate());
+setInterval(() => checkForAppUpdate(), 5 * 60 * 1000);
 if ('serviceWorker' in navigator && ['https:','http:'].includes(location.protocol)) {
   navigator.serviceWorker.register('./sw.js', {scope:'./', updateViaCache:'none'})
     .then(registration => {
+      appRegistration = registration;
+      lastUpdateCheck = Date.now();
       const ready = () => offlineStatus('Ready for offline exploring. Your discoveries and games are saved on this device; source links still need internet.');
       const failed = () => offlineStatus('Offline setup could not finish. Keep WonderBrain open with an internet connection and reload to try again.');
       if (registration.active?.state === 'activated') ready();

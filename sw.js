@@ -1,8 +1,8 @@
-/* WonderBrain's complete app lives in index.html. Bump VERSION when publishing
-   new app files so the next worker installs a fresh, complete offline copy. */
+/* WonderBrain's release version is generated from the complete app and worker.
+   Run node scripts/prepare-release.cjs after changing the published app files. */
 'use strict';
 
-const VERSION = 'v3.1-install-1';
+const VERSION = 'v3.1-03847e8f2b191ada8dd4e54fe62c95f982c46b4dda7c7d44e07f0e9adcdb1e53';
 const SCOPE = new URL(self.registration.scope);
 const CACHE_PREFIX = `wonderbrain:${encodeURIComponent(SCOPE.href)}:`;
 const CACHE_NAME = `${CACHE_PREFIX}${VERSION}`;
@@ -95,7 +95,8 @@ async function navigate(request) {
   try {
     const response = await fetch(request, {signal: controller.signal, cache: 'no-cache'});
     if (!(await usableResponse(response, ASSETS[0]))) throw new Error('App document unavailable');
-    await remember(INDEX_URL, response);
+    // Keep this worker's complete offline release intact. A newer document
+    // enters its own versioned cache only after the next full worker install.
     return response;
   } catch {
     const cached = await readCached(INDEX_URL);
