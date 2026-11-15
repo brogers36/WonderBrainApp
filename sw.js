@@ -2,7 +2,7 @@
    Run node scripts/prepare-release.cjs after changing the published app files. */
 'use strict';
 
-const VERSION = 'v3.1-03847e8f2b191ada8dd4e54fe62c95f982c46b4dda7c7d44e07f0e9adcdb1e53';
+const VERSION = 'v3.1-43ebf32da8697230a5703241a8f0a81d0885beb97d622a4119dc66047efe40bc';
 const SCOPE = new URL(self.registration.scope);
 const CACHE_PREFIX = `wonderbrain:${encodeURIComponent(SCOPE.href)}:`;
 const CACHE_NAME = `${CACHE_PREFIX}${VERSION}`;

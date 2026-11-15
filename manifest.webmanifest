@@ -2,13 +2,13 @@
   "id": "./",
   "name": "WonderBrain",
   "short_name": "WonderBrain",
-  "description": "Follow your curiosity through science, language, history, and imagined worlds. Explore connected discoveries and play four learning games.",
+  "description": "Explore 14 connected worlds, dive into the Shark Lab, and play four curiosity games. Follow a question somewhere unexpected.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f5ef",
-  "theme_color": "#1c3535",
+  "background_color": "#faf7ef",
+  "theme_color": "#112c38",
   "prefer_related_applications": false,
   "icons": [
     {

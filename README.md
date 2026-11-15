@@ -4,13 +4,17 @@ A little universe of connected ideas. WonderBrain is an installable learning app
 
 ## Explore
 
-- **39 discoveries** across science, linguistics, history, astronomy, astrophysics, biology, quantum physics, cell biology, immune biology, math, chemistry, Tolkien lore, and D&D lore.
-- **117 rabbit-hole connections**, plus full-text search and subject filters.
+- **48 discoveries** across science, linguistics, history, astronomy, astrophysics, biology, quantum physics, cell biology, immune biology, math, chemistry, Tolkien lore, D&D lore, and sharks.
+- **144 rabbit-hole connections**, plus full-text search, four discovery areas, and subject filters.
+- A dedicated **Shark Lab** with nine source-linked deep dives, grouped into senses and survival, extraordinary species, and life and conservation.
+- A redesigned home with featured discoveries, clear pathways, a focused library, and a brain/orbit/spark visual identity.
 - Original introductions, a thought experiment or activity, and further-reading sources for every discovery.
 - A saved collection and exploration progress kept in the current browser.
 - Four untimed games: **Curiosity quiz**, **Connection match**, **Time traveler**, and **Element lab**.
 - Keyboard controls, light/dark/device appearance, three text sizes, higher contrast, roomier reading, and reduced motion controls.
 - App installation support with WonderBrain icons, a separate app window, and offline access after a complete first online visit.
+
+The discovery areas are **Cosmos & matter**, **Life & oceans**, **Language & time**, and **Imagined worlds**. The library begins with a varied selection of twelve discoveries; **Show more discoveries** reveals the rest. Original discovery IDs and saved collections remain compatible. Shark stories also connect back into the wider library.
 
 Fictional worlds are identified in the app. D&D rules references specify the 2024 rules where relevant; details can differ by edition and setting. WonderBrain is an independent project and is not affiliated with Tolkien's estate or the publishers of Dungeons & Dragons.
 

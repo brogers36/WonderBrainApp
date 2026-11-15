@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" role="img" aria-label="WonderBrain" focusable="false">
+  <ellipse cx="64" cy="65" rx="56" ry="22" transform="rotate(-28 64 65)" stroke="#112c38" stroke-width="8"/>
+  <ellipse cx="64" cy="65" rx="56" ry="22" transform="rotate(-28 64 65)" stroke="#ef9273" stroke-width="4.8"/>
+  <path d="M64 32C58 23 44 25 41 36C30 35 22 46 27 56C18 60 18 73 26 79C23 89 32 97 43 94C47 103 59 103 64 96Z" fill="#faf7ef" stroke="#112c38" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 32C58 23 44 25 41 36C30 35 22 46 27 56C18 60 18 73 26 79C23 89 32 97 43 94C47 103 59 103 64 96Z" transform="translate(128 0) scale(-1 1)" fill="#4bb7ab" stroke="#112c38" stroke-width="4" stroke-linejoin="round"/>
+  <g stroke="#112c38" stroke-width="4" stroke-linecap="round">
+    <path d="M43 38C35 43 39 54 48 54C53 54 56 58 55 64M28 66C35 62 45 67 44 75C43 82 49 87 55 86"/>
+    <path d="M43 38C35 43 39 54 48 54C53 54 56 58 55 64M28 66C35 62 45 67 44 75C43 82 49 87 55 86" transform="translate(128 0) scale(-1 1)"/>
+  </g>
+  <path d="M14.55 91.29A56 22-28 0 0 113.45 38.71" stroke="#112c38" stroke-width="8" stroke-linecap="round"/>
+  <path d="M14.55 91.29A56 22-28 0 0 113.45 38.71" stroke="#ef9273" stroke-width="4.8" stroke-linecap="round"/>
+  <path d="M108 16L111.2 24.8L120 28L111.2 31.2L108 40L104.8 31.2L96 28L104.8 24.8Z" fill="#e8cf68" stroke="#112c38" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
