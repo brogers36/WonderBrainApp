@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f5ef">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="WonderBrain">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 <meta name="description" content="WonderBrain is a little universe of big ideas. Explore 13 connected subjects, follow rabbit holes, and play four curiosity games. No account required.">
 <title>WonderBrain · A little more curious</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c3535'/%3E%3Ctext x='32' y='46' text-anchor='middle' fill='%23e7eea2' font-family='Georgia' font-size='44'%3Ew%3C/text%3E%3C/svg%3E">
@@ -14,6 +20,8 @@ dialog{padding:0;border:1px solid var(--line);border-radius:24px;background:var(
 :root[data-theme=dark]{color-scheme:dark;--bg:#172826;--paper:#203431;--ink:#f0f1de;--muted:#bacbc2;--line:#496058;--soft:#2c4940;--green:#bfd6b8;--yellow:#e4d694;--purple:#cfc1df;--blue:#b7d3dc;--accent:#c2dfa8;--shadow:0 16px 60px #0003}:root[data-theme=dark] .brand-icon{color:#172826}:root[data-theme=dark] .core{background:#304e42}:root[data-theme=dark] .orbit-label{color:#203b30}:root[data-theme=dark] .orbit-label.one{color:var(--ink)}:root[data-contrast=true]{--muted:var(--ink);--line:var(--ink)}:root[data-text=large]{font-size:18px}:root[data-text=xlarge]{font-size:20px}:root[data-spacing=true] body{line-height:1.9;letter-spacing:.015em;word-spacing:.06em}:root[data-spacing=true] .article-copy{line-height:2.1}:root[data-motion=reduce] *{scroll-behavior:auto!important;transition:none!important;animation:none!important}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 @media(min-width:1500px){.hero{padding:80px 0}.universe{min-height:420px}}@media(max-width:1000px){.wrap{width:calc(100% - 48px)}.local-note{display:none}.hero{gap:25px;padding:50px 0}.universe{min-height:340px}.orbit-label.two{right:0}.orbit-label.three{left:0}.cards{gap:16px}.card-content{padding:20px}.hero-foot{gap:20px}.header-inner{gap:15px}.nav-button{padding:10px 13px}}@media(max-width:760px){.header-inner{flex-wrap:wrap;padding-top:18px;gap:14px;min-height:120px}.brand{font-size:1.25rem}.header-right{margin-left:auto}.top-nav{order:3;width:100%;border-top:1px solid var(--line);padding:10px 0;justify-content:center}.nav-button{flex:1;font-size:.8rem;padding:9px}.wrap{width:calc(100% - 36px)}.hero{grid-template-columns:1fr;gap:14px;padding:38px 0}.hero-copy>p{max-width:550px}.hero-copy h1 br{display:none}.hero .eyebrow{margin-bottom:19px}.hero-foot{margin-top:23px}.universe{min-height:290px;max-width:440px;width:100%;margin:7px auto}.core{width:135px;height:135px}.core svg{width:85px;height:85px}.orbit-label{font-size:.67rem;padding:7px 13px}.orbit-label.two{top:72px}.orbit-label.three{bottom:58px}.orbit-label.four{bottom:0}.discovery-band{align-items:flex-start;gap:10px}.discovery-band .band-text{gap:10px}.progress-pill{font-size:.65rem;padding:8px 9px}.band-text strong{font-size:.78rem}.band-text p{font-size:.7rem}.band-symbol{display:none}.library{padding:35px 0 50px}.section-heading{align-items:flex-start;flex-direction:column;gap:20px}.search-wrap{min-width:0;width:100%}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card-content{padding:18px}.card-art{height:115px}.card-tag{font-size:.5rem;left:12px;max-width:70%}.save-button{right:8px;top:8px;width:32px;height:32px}.card-content h3{font-size:1rem}.card-meta{font-size:.58rem;flex-wrap:wrap}.card-content>p{font-size:.75rem}.card-bottom{font-size:.6rem}.footer-inner{align-items:flex-start;flex-direction:column}.footer p{text-align:left}.dialog-body{padding:25px}.dialog-bar{padding:12px 17px}.page-view{padding:35px 0 55px}.collection-stats{gap:18px;flex-wrap:wrap}.game-panel{padding:20px}.filter{font-size:.7rem;padding:7px 11px}}@media(max-width:440px){.cards{grid-template-columns:1fr}.card-art{height:145px}.card-tag{font-size:.62rem}.card-content h3{font-size:1.2rem}.card-meta{font-size:.7rem}.card-content>p{font-size:.86rem}.card-bottom{font-size:.73rem}.hero-actions{gap:8px}.hero-actions .button{padding:12px 17px;font-size:.8rem}.hero-foot{font-size:.67rem}.discovery-band{flex-wrap:wrap}.progress-pill{margin-top:6px}.settings .dialog-body{padding:24px 20px}.setting-row{gap:10px}.setting-row select{max-width:130px}.trail{font-size:.65rem}.game-panel{padding:17px}}
 @media(max-width:760px){.universe{overflow:clip}.top-nav{min-width:0}.nav-button{padding-inline:7px;white-space:normal}.hero-foot{flex-wrap:wrap}}
+.install-open{padding:9px 15px;white-space:nowrap}.install-open svg{width:17px;height:17px}.install-dialog{width:min(600px,100% - 32px)}.install-dialog .dialog-body{padding:28px 32px 35px}.install-brand{display:flex;gap:18px;align-items:center;margin-bottom:25px}.install-brand img{width:72px;height:72px;border-radius:18px}.install-brand .eyebrow{color:var(--muted);margin-bottom:8px}.install-brand h2{font-size:2.2rem}.install-dialog p{font-size:.88rem}.install-state{padding:14px 17px;background:var(--soft);border:1px solid var(--line);border-radius:12px;margin:20px 0;font-size:.8rem!important}.install-help{border-top:1px solid var(--line);margin-top:24px;padding-top:22px}.install-help h3{font-size:.95rem;margin-bottom:9px}.install-help p{color:var(--muted);font-size:.81rem}.install-help+.install-help{margin-top:21px;padding-top:21px}.install-dialog .button{margin-top:6px}.install-result{font-size:.82rem!important;color:var(--accent);margin-top:16px}.install-hint{font-size:.74rem!important;color:var(--muted);margin-top:24px!important}@media(max-width:1000px){.header-right{gap:10px}}@media(max-width:760px){.install-open{width:42px;height:42px;min-height:42px;padding:0;border-radius:50%}.install-open span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.install-dialog .dialog-body{padding:24px}.install-brand{gap:13px}.install-brand img{width:56px;height:56px;border-radius:14px}.install-brand h2{font-size:1.8rem}}@media(max-width:440px){.install-dialog .dialog-body{padding:21px}.install-brand .eyebrow{font-size:.57rem}.install-brand h2{font-size:1.6rem}.install-brand img{width:48px;height:48px;flex-shrink:0}}
+@media(max-width:760px){.button.install-open{padding:0;min-height:42px}}
 
 .game-tabs {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin-bottom:1.5rem}
 .game-tabs .button {text-align:left;white-space:normal;min-height:4.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.2rem}
@@ -35,6 +43,7 @@ dialog{padding:0;border:1px solid var(--line);border-radius:24px;background:var(
 .formula-display {font-size:1.4rem;font-weight:700;padding:1rem 0}.game-sources {font-size:.8rem;margin-top:1.5rem}.game-sources a {margin-right:.75rem}.game-panel fieldset {padding:0;border:0;margin:0}.game-panel legend {font-weight:700;font-size:1.2rem;padding:0;margin-bottom:1rem}
 @media(max-width:680px){.game-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.atom-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-grid{grid-template-columns:1fr}.match-columns{gap:.5rem}.match-stack .game-option{padding:.65rem;font-size:.9rem}.timeline-row{flex-wrap:wrap}}
 
+.game-option{overflow-wrap:anywhere}.match-columns{grid-template-columns:repeat(2,minmax(0,1fr))}.match-stack{min-width:0}
 </style>
 </head>
 <body>
@@ -42,7 +51,7 @@ dialog{padding:0;border:1px solid var(--line);border-radius:24px;background:var(
 <header class="masthead"><div class="wrap header-inner">
 <a class="brand" href="#" aria-label="WonderBrain home"><span class="brand-icon" aria-hidden="true">w</span>WonderBrain<small>v3.1</small></a>
 <nav class="top-nav" aria-label="Main navigation"><button type="button" class="nav-button" data-view="explore" aria-current="page">Explore</button><button type="button" class="nav-button" data-view="games">Play & learn</button><button type="button" class="nav-button" data-view="collection">My collection <span id="saved-count">0</span></button></nav>
-<div class="header-right"><span class="local-note">A little more curious</span><button type="button" id="settings-open" class="icon-button" aria-label="Accessibility and display settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="m4 8 8 2 8-2M12 10v5m0-2-5 8m5-8 5 8"/></svg></button></div>
+<div class="header-right"><span class="local-note">A little more curious</span><button type="button" id="install-open" class="button secondary small install-open" data-install-open aria-label="Install WonderBrain" title="Install WonderBrain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg><span>Install app</span></button><button type="button" id="settings-open" class="icon-button" aria-label="Accessibility and display settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="m4 8 8 2 8-2M12 10v5m0-2-5 8m5-8 5 8"/></svg></button></div>
 </div></header>
 <main id="main" tabindex="-1">
 <div id="explore-view" class="wrap">
@@ -58,6 +67,7 @@ dialog{padding:0;border:1px solid var(--line);border-radius:24px;background:var(
 <footer class="footer"><div class="wrap footer-inner"><span class="brand"><span aria-hidden="true">✳</span> Stay curious.</span><p>WonderBrain v3.1 · Made for the joy of finding out.<br>Science & history are evidence based. Tolkien and D&D entries explore fictional worlds.</p></div></footer>
 <dialog id="article-dialog" aria-labelledby="article-title"><div class="dialog-bar"><span class="eyebrow">Down the rabbit hole</span><button type="button" class="icon-button" id="article-close" aria-label="Close discovery"><span aria-hidden="true">✕</span></button></div><div id="article-content" class="dialog-body"></div></dialog>
 <dialog id="settings-dialog" class="settings" aria-labelledby="settings-title"><div class="dialog-bar"><span class="eyebrow">Make yourself comfortable</span><button type="button" class="icon-button" id="settings-close" aria-label="Close settings"><span aria-hidden="true">✕</span></button></div><div class="dialog-body"><h2 id="settings-title">Your way to wander.</h2><p class="settings-intro">Adjust WonderBrain to suit you. Every activity works with a keyboard, without a time limit.</p><div class="setting-row"><label for="theme">Appearance</label><select id="theme"><option value="system">Use device setting</option><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="setting-row"><label for="text-size">Text size</label><select id="text-size"><option value="standard">Standard</option><option value="large">Large</option><option value="xlarge">Extra large</option></select></div><div class="setting-row"><label for="contrast">Higher contrast<small>Stronger text and borders.</small></label><input id="contrast" type="checkbox"></div><div class="setting-row"><label for="spacing">Roomier reading<small>More space between lines and words.</small></label><input id="spacing" type="checkbox"></div><div class="setting-row"><label for="motion">Reduce motion<small>Your device's reduced motion preference is also respected.</small></label><input id="motion" type="checkbox"></div><p class="storage-status">Use Tab to move, Enter or Space to activate buttons, and Escape to close a dialog. Settings save on this device when browser storage is available.</p></div></dialog>
+<dialog id="install-dialog" class="install-dialog" aria-labelledby="install-title"><div class="dialog-bar"><span class="eyebrow">A home for your curiosity</span><button type="button" id="install-close" class="icon-button" aria-label="Close installation help"><span aria-hidden="true">✕</span></button></div><div class="dialog-body"><div class="install-brand"><img src="./icons/icon-192.png" width="72" height="72" alt=""><div><p class="eyebrow">Take WonderBrain with you</p><h2 id="install-title">A little closer to curious.</h2></div></div><p>Give WonderBrain a place beside your favorite apps, with its own icon and a separate app window.</p><p id="offline-state" class="install-state" role="status" aria-live="polite">Preparing offline access…</p><button type="button" id="install-confirm" class="button" hidden>Install WonderBrain <span aria-hidden="true">↗</span></button><p id="install-result" class="install-result" role="status" aria-live="polite" hidden></p><section class="install-help"><h3>On Android</h3><p>Open WonderBrain in Chrome. Tap the browser’s <strong>⋮</strong> menu and choose <strong>Install app</strong>. It may appear under <strong>Add to Home screen</strong> or <strong>Install and create shortcut</strong>. Choose <strong>Install</strong> when offered.</p></section><section class="install-help"><h3>On iPhone or iPad</h3><p>In Safari, tap <strong>Share → Add to Home Screen</strong>. Turn on <strong>Open as Web App</strong> if shown, then tap <strong>Add</strong>.</p></section><p class="install-hint">Already have the old shortcut? After the new app appears, remove the old shortcut with the Chrome badge. If installation is not offered, keep this page open for a moment, explore a discovery, and check the browser menu again. Installation and icon appearance depend on your browser and device.</p></div></dialog>
 <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 <script>
 'use strict';
@@ -771,6 +781,7 @@ function persist() {
 function applySettings() {
   const s = state.settings, root = document.documentElement;
   root.dataset.theme = s.theme === 'system' ? (systemTheme.matches ? 'dark' : 'light') : s.theme;
+  $('meta[name="theme-color"]').content = root.dataset.theme === 'dark' ? '#172826' : '#f7f5ef';
   root.dataset.text = s.text;
   root.dataset.contrast = String(s.contrast);
   root.dataset.spacing = String(s.spacing);
@@ -905,6 +916,104 @@ document.addEventListener('click',event => {
 window.addEventListener('hashchange',handleHash);
 window.addEventListener('popstate',() => { if (!location.hash.startsWith('#topic=')) handleHash(); });
 applySettings(); persist(); renderFilters(); renderCards(); handleHash();
+
+// Installation is an enhancement: the full app also works in a normal browser tab.
+const installDialog = $('#install-dialog');
+const installConfirm = $('#install-confirm');
+const standaloneMode = matchMedia('(display-mode: standalone)');
+let pendingInstallPrompt = null;
+let installAccepted = false;
+let installBusy = false;
+function inAppWindow() { return standaloneMode.matches || navigator.standalone === true; }
+function syncInstallControls() {
+  for (const button of $$('[data-install-open]')) button.hidden = inAppWindow() || installAccepted;
+  installConfirm.hidden = !pendingInstallPrompt || inAppWindow() || installAccepted;
+  installConfirm.disabled = installBusy;
+}
+function installationResult(message) {
+  $('#install-result').textContent = message;
+  $('#install-result').hidden = false;
+}
+function openInstallHelp() {
+  if (inAppWindow()) return;
+  if (!installDialog.open) installDialog.showModal();
+}
+for (const button of $$('[data-install-open]')) button.addEventListener('click', openInstallHelp);
+$('#install-close').addEventListener('click', () => installDialog.close());
+installDialog.addEventListener('click', event => {
+  if (event.target !== installDialog) return;
+  const rect = installDialog.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) installDialog.close();
+});
+window.addEventListener('beforeinstallprompt', event => {
+  event.preventDefault();
+  pendingInstallPrompt = event;
+  syncInstallControls();
+});
+installConfirm.addEventListener('click', async () => {
+  if (!pendingInstallPrompt || installBusy) return;
+  const promptEvent = pendingInstallPrompt;
+  pendingInstallPrompt = null;
+  installBusy = true;
+  installConfirm.disabled = true;
+  try {
+    // prompt() stays directly inside the user's click gesture.
+    await promptEvent.prompt();
+    const choice = await promptEvent.userChoice;
+    if (choice.outcome === 'accepted') {
+      installAccepted = true;
+      installationResult('Installation accepted. Finish any steps on your phone, then open WonderBrain from your app list when it appears.');
+    } else {
+      installationResult('Installation canceled. You can install later from your browser menu.');
+    }
+  } catch {
+    installationResult('The installation prompt could not open. Use your browser’s Install app option, or follow the steps below.');
+  } finally {
+    installBusy = false;
+    syncInstallControls();
+    // The browser prompt consumes the event, so keep focus on the surviving dialog.
+    if (installDialog.open) $('#install-close').focus({preventScroll:true});
+  }
+});
+window.addEventListener('appinstalled', () => {
+  installAccepted = true;
+  pendingInstallPrompt = null;
+  syncInstallControls();
+  installationResult('Installation accepted. Open WonderBrain from your app list when it appears.');
+  announce('WonderBrain installation accepted.');
+});
+standaloneMode.addEventListener('change', () => {
+  syncInstallControls();
+  if (inAppWindow() && installDialog.open) installDialog.close();
+});
+syncInstallControls();
+function offlineStatus(message) { $('#offline-state').textContent = message; }
+if ('serviceWorker' in navigator && ['https:','http:'].includes(location.protocol)) {
+  navigator.serviceWorker.register('./sw.js', {scope:'./', updateViaCache:'none'})
+    .then(registration => {
+      const ready = () => offlineStatus('Ready for offline exploring. Your discoveries and games are saved on this device; source links still need internet.');
+      const failed = () => offlineStatus('Offline setup could not finish. Keep WonderBrain open with an internet connection and reload to try again.');
+      if (registration.active?.state === 'activated') ready();
+      const worker = registration.installing || registration.waiting || registration.active;
+      if (worker) {
+        const checkState = () => {
+          if (worker.state === 'activated') { ready(); worker.removeEventListener('statechange', checkState); }
+          else if (worker.state === 'redundant') {
+            if (!registration.active) failed();
+            worker.removeEventListener('statechange', checkState);
+          }
+        };
+        worker.addEventListener('statechange', checkState);
+        checkState();
+      }
+      navigator.serviceWorker.ready.then(ready);
+    })
+    .catch(() => {
+      offlineStatus('Offline setup could not finish. Keep WonderBrain open with an internet connection and reload to try again.');
+    });
+} else {
+  offlineStatus(location.protocol === 'file:' ? 'For app installation and offline access on your phone, open the WonderBrain website in your browser.' : 'Your browser can explore WonderBrain online. Offline app installation is not available here.');
+}
 
 </script>
 </body>
